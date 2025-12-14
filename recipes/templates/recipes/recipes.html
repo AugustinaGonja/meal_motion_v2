@@ -27,19 +27,29 @@
             <li><a class="dropdown-item" href="{% url 'recipes' %}?category=fish_and_seafood">Fish & Seafood</a></li>
         </ul>
 
-        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown"
-            aria-expanded="false">Sort By . . .
+        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            {% if not request.GET.sort %}
+            Sort By . . .
+            {% else %}
+            Sort By |
+            {% if request.GET.sort == "category" %}
+            Category ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+            {% elif request.GET.sort == "name" %}
+            Name ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+            {% elif request.GET.sort == "rating" %}
+            Rating
+            {% endif %}
+            {% endif %}
         </button>
 
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=category&direction=asc">Category (A-Z)</a></li>
-            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=category&direction=desc">Category (Z-A)</a>
-            </li>
             <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=name&direction=asc">Name
                     (A-Z)</a></li>
             <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=name&direction=des">Name
                     (Z-A)</a></li>
-            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=rating&direction=desc">Rating</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=rating&direction=asc">Rating (Low-High)</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=rating&direction=desc">Rating (High-Low)</a></li>
         </ul>
     </div>
 </div>

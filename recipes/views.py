@@ -7,7 +7,7 @@ from django.db.models.functions import Lower
 def recipe_list(request):
 
     """
-    Display list of recipes with search, filter, and sorting
+    Display list of recipes with filter, and sorting
     functionality.
 
     """

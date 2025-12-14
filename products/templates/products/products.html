@@ -28,7 +28,21 @@
         </ul>
 
         <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown"
-            aria-expanded="false">Sort By . . .
+            aria-expanded="false">
+            {% if not request.GET.sort %}
+            Sort By . . .
+            {% else %}
+            Sort By |
+            {% if request.GET.sort == "category" %}
+            Category ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+            {% elif request.GET.sort == "name" %}
+            Name ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+            {% elif request.GET.sort == "price" %}
+            Price ({% if request.GET.direction == "desc" %}Z-A{% else %}A-Z{% endif %})
+            {% elif request.GET.sort == "rating" %}
+            Rating
+            {% endif %}
+            {% endif %}
         </button>
 
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
@@ -43,7 +57,8 @@
                     (Low-High)</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Price
                     (High-Low)</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=asc">Rating (Low-High)</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating (High-Low)</a></li>
         </ul>
     </div>
 </div>
