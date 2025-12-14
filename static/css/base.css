@@ -98,6 +98,41 @@ p.subtitle {
     text-transform: uppercase;
 }
 
+/* Products & Recipes */
+.product-image , .recipe-image {
+    width: 100%;         
+    height: 350px;       
+    object-fit:cover;
+}
+
+.category-badge {
+    position: absolute;
+    background: #ec4e20;
+    color: white;
+    padding: 15px;
+    font: 12px 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px #333533;
+}
+
+.delivery-box {
+    background: #ffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.delivery-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.delivery-item i {
+    margin-right: 10px;
+    color: #79b4e2;
+}
+
 /* Search Bar */
 .search-bar-top {
   background-color: #79b4e2 !important;
