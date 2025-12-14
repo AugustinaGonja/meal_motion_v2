@@ -16,7 +16,7 @@
     <!--Sort and Filter Buttons-->
     <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
 
-        <button class="btn rounded-1 fn-shop dropdown-toggle text-uppercase" type="button" id="sortDropdown"
+        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown"
             data-bs-toggle="dropdown" aria-expanded="false">
             Filter By Category
         </button>
@@ -27,10 +27,10 @@
             <li><a class="dropdown-item" href="#">Kitchen Tools</a></li>
         </ul>
 
-        <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown"
-            aria-expanded="false">
+        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">Sort By . . .
         </button>
-        
+
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
             <li><a class="dropdown-item" href="#">Category (A-Z)</a></li>
             <li><a class="dropdown-item" href="#">Category (Z-A)</a>
@@ -53,14 +53,14 @@
         {% for product in products %}
         <div class="col-md-3 mb-4">
             <!--Container contents wrapped in link to product details-->
-            <a href="#" class="text-dark text-decoration-none d-block">
+            <a href="{% url 'product_details' product.id %}" class="text-dark text-decoration-none d-block">
                 <div class="category-badge"><i class="fa-solid fa-tags"></i>
                     {{ product.category.friendly_name }}
                 </div>
                 {% if product.image %}
                 <img src="{{ product.image_url }}" class="product-image w-100" alt="{{ product.name }}">
                 {% else %}
-                <img src="#" class="product-image w-100" alt="No Image Available">
+                <img src="{{ MEDIA_URL }}no-image-icon-0.jpg" class="product-image w-100" alt="No Image Available">
                 {% endif %}
                 <!--Product Info-->
                 <div class="d-flex justify-content-between align-items-center mt-3">
