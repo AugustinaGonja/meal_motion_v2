@@ -35,10 +35,10 @@
         
         <!-- Shop Dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle" href="{% url 'products' %}" id="shopDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">Fitness & Nutrition Shop</a>
           <ul class="dropdown-menu dropdown-nav-mobile w-100" aria-labelledby="shopDropdown">
-            <li><a class="dropdown-item fw-bold" href="#">All Products</a></li>
+            <li><a class="dropdown-item fw-bold" href="{% url 'products' %}">All Products</a></li>
             <li><a class="dropdown-item" href="#">Supplements</a></li>
             <li><a class="dropdown-item" href="#">Hydration</a></li>
             <li><a class="dropdown-item" href="#">Fitness Equipment</a>
@@ -49,7 +49,7 @@
 
         <!-- Regular Links -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Recipe Catalogue</a>
+          <a class="nav-link" href="{% url 'recipes' %}">Recipe Catalogue</a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>

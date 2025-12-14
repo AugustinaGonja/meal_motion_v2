@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="mb-4 text-center">
+        {% if not current_categories %}
+        <h1>Products</h1>
+        {% else %}
+        <h1 class="text-center">{{ category_objects.first.friendly_name }}</h1>
+        {% endif %}
+    </div>
+    <hr>
+
+    <!--Sort and Filter Buttons-->
+    <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
+
+        <button class="btn rounded-1 fn-shop dropdown-toggle text-uppercase" type="button" id="sortDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Filter By Category
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li><a class="dropdown-item" href="#">Supplement</a></li>
+            <li><a class="dropdown-item" href="#">Hydration</a></li>
+            <li><a class="dropdown-item" href="#">Fitness Equipment</a></li>
+            <li><a class="dropdown-item" href="#">Kitchen Tools</a></li>
+        </ul>
+
+        <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+        </button>
+        
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li><a class="dropdown-item" href="#">Category (A-Z)</a></li>
+            <li><a class="dropdown-item" href="#">Category (Z-A)</a>
+            </li>
+            <li><a class="dropdown-item" href="#">Name
+                    (A-Z)</a></li>
+            <li><a class="dropdown-item" href="#">Name
+                    (Z-A)</a></li>
+            <li><a class="dropdown-item" href="#">Price
+                    (Low-High)</a></li>
+            <li><a class="dropdown-item" href="#">Price
+                    (High-Low)</a></li>
+            <li><a class="dropdown-item" href="#">Rating</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-3 mb-4">
+            <!--Container contents wrapped in link to product details-->
+            <a href="#" class="text-dark text-decoration-none d-block">
+                <div class="category-badge"><i class="fa-solid fa-tags"></i>
+                    {{ product.category.friendly_name }}
+                </div>
+                {% if product.image %}
+                <img src="{{ product.image_url }}" class="product-image w-100" alt="{{ product.name }}">
+                {% else %}
+                <img src="#" class="product-image w-100" alt="No Image Available">
+                {% endif %}
+                <!--Product Info-->
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <h5 class="fs-5 mb-0">{{ product.name }}</h5>
+                    <div class="d-flex align-items-center">
+                        <small>
+                            <strong>
+                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
+                                {{ product.rating }}/5
+                            </strong>
+                        </small>
+                    </div>
+                </div>
+                <p class="mb-2 fs-6 text-muted">{{ product.description }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

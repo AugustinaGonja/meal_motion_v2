@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="mb-2 text-center">
+        <h1>Recipe Catalogue</h1>
+    </div>
+    <hr>
+    <!--Sort and Filter Buttons-->
+    <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
+
+        <button class="btn rounded-1 fn-shop dropdown-toggle text-uppercase" type="button" id="sortDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Filter By Category
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li><a class="dropdown-item" href="#">Meaty Dishes</a></li>
+            <li><a class="dropdown-item" href="#">High Protein</a></li>
+            <li><a class="dropdown-item" href="#">Vegetarian</a></li>
+            <li><a class="dropdown-item" href="#">Low Cal</a></li>
+            <li><a class="dropdown-item" href="#">Fish & Seafood</a></li>
+        </ul>
+
+        <button class="btn rounded-1 fn-shop dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li><a class="dropdown-item" href="#">Category (A-Z)</a></li>
+            <li><a class="dropdown-item" href="#">Category (Z-A)</a>
+            </li>
+            <li><a class="dropdown-item" href="#">Name
+                    (A-Z)</a></li>
+            <li><a class="dropdown-item" href="#">Name
+                    (Z-A)</a></li>
+            <li><a class="dropdown-item" href="#">Price
+                    (Low-High)</a></li>
+            <li><a class="dropdown-item" href="#">Price
+                    (High-Low)</a></li>
+            <li><a class="dropdown-item" href="#">Rating</a></li>
+        </ul>
+    </div>
+</div>
+<div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
+
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col-md-3 mb-4">
+            <!--Container contents wrapped in link to recipe details-->
+            <a href="#" class="text-dark text-decoration-none d-block">
+                <div class="category-badge">
+                    <i class="fa-solid fa-utensils me-2"></i>
+                    {% for category in recipe.categories.all %}
+                    {{ category.friendly_name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </div>
+                {% if recipe.image %}
+                <img src="{{ recipe.image_url }}" class="recipe-image w-100" alt="{{ recipe.name }}">
+                {% else %}
+                <img src="{% static 'media/no-image-icon-0.jpg' %}" class="recipe-image w-100" alt="No Image Available">
+                {% endif %}
+                <!--Recipe Info-->
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div class="d-flex flex-column">
+                        <h5 class="fs-5 mb-2">{{ recipe.name }}</h5>
+                        <p class="fw-bold mb-2">{{ recipe.nutritional_value.calories }} Kcal</p>
+                        <small>
+                            <strong>
+                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
+                                {{ recipe.rating }}/5
+                            </strong>
+                        </small>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
