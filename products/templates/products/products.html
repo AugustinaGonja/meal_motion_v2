@@ -32,18 +32,18 @@
         </button>
 
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="#">Category (A-Z)</a></li>
-            <li><a class="dropdown-item" href="#">Category (Z-A)</a>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">Category (A-Z)</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=desc">Category (Z-A)</a>
             </li>
-            <li><a class="dropdown-item" href="#">Name
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc">Name
                     (A-Z)</a></li>
-            <li><a class="dropdown-item" href="#">Name
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=des">Name
                     (Z-A)</a></li>
-            <li><a class="dropdown-item" href="#">Price
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Price
                     (Low-High)</a></li>
-            <li><a class="dropdown-item" href="#">Price
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Price
                     (High-Low)</a></li>
-            <li><a class="dropdown-item" href="#">Rating</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating</a></li>
         </ul>
     </div>
 </div>

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 
 from .models import Product, Category
 
@@ -15,16 +16,34 @@ def product_list(request):
 
     """
     products = Product.objects.all()
+    total_products = products.count()
     query = None
     category_names = []
     category_objects = Category.objects.none()
+    sort = None
+    direction = None
+
+    # Sorting
+    if 'sort' in request.GET:
+        sortkey = request.GET['sort']
+        sort = sortkey
+        if sortkey == 'name':
+            sortkey = 'lower_name'
+            products = products.annotate(lower_name=Lower("name"))
+
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+            if direction == 'desc':
+                sortkey = f'-{sortkey}'
+        products = products.order_by(sortkey)
+    current_sorting = f'{sort}_{direction}'
 
     # Filtering by category
     if 'category' in request.GET:
         category_names = request.GET['category'].split(',')
         products = products.filter(category__name__in=category_names)
         category_objects = Category.objects.filter(name__in=category_names)
-
+        total_products = products.count()
 
     # Searching
     if 'q' in request.GET:
@@ -38,9 +57,11 @@ def product_list(request):
 
     context = {
         'products': products,
+        'total_products': total_products,
         'search_term': query,
         'current_categories': category_names,
         'category_objects': category_objects,
+        'current_sorting': sort,
     }
 
     return render(request, 'products/products.html', context)

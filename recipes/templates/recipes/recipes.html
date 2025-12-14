@@ -32,18 +32,14 @@
         </button>
 
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="#">Category (A-Z)</a></li>
-            <li><a class="dropdown-item" href="#">Category (Z-A)</a>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=category&direction=asc">Category (A-Z)</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=category&direction=desc">Category (Z-A)</a>
             </li>
-            <li><a class="dropdown-item" href="#">Name
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=name&direction=asc">Name
                     (A-Z)</a></li>
-            <li><a class="dropdown-item" href="#">Name
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=name&direction=des">Name
                     (Z-A)</a></li>
-            <li><a class="dropdown-item" href="#">Price
-                    (Low-High)</a></li>
-            <li><a class="dropdown-item" href="#">Price
-                    (High-Low)</a></li>
-            <li><a class="dropdown-item" href="#">Rating</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?sort=rating&direction=desc">Rating</a></li>
         </ul>
     </div>
 </div>
