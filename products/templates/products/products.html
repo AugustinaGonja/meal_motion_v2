@@ -21,10 +21,10 @@
             Filter By Category
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="#">Supplement</a></li>
-            <li><a class="dropdown-item" href="#">Hydration</a></li>
-            <li><a class="dropdown-item" href="#">Fitness Equipment</a></li>
-            <li><a class="dropdown-item" href="#">Kitchen Tools</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplement</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
         </ul>
 
         <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown"

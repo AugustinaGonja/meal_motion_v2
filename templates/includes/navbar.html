@@ -39,11 +39,11 @@
             aria-expanded="false">Fitness & Nutrition Shop</a>
           <ul class="dropdown-menu dropdown-nav-mobile w-100" aria-labelledby="shopDropdown">
             <li><a class="dropdown-item fw-bold" href="{% url 'products' %}">All Products</a></li>
-            <li><a class="dropdown-item" href="#">Supplements</a></li>
-            <li><a class="dropdown-item" href="#">Hydration</a></li>
-            <li><a class="dropdown-item" href="#">Fitness Equipment</a>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplements</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a>
             </li>
-            <li><a class="dropdown-item" href="#">Kitchen Tools</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
           </ul>
         </li>
 
