@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Return to Recipes -->
+    <div class="mb-4">
+        <a href="{% url 'recipes' %}" class="btn rounded-1 def-btn">
+            <i class="fa-solid fa-chevron-left me-2"></i>
+            Continue Browsing
+        </a>
+    </div>
+
+    <div class="row">
+        <!-- Recipe Image -->
+        <div class="col-md-6 mb-4 position-relative">
+            {% if recipe.categories.all %}
+            <div class="category-badge position-absolute">
+                {% for category in recipe.categories.all %}
+                {{ category.friendly_name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if recipe.image %}
+            <img src="{{ recipe.image_url }}" class="img-fluid rounded" alt="{{ recipe.name }}">
+            {% elif recipe.image_url %}
+            <img src="{{ recipe.image_url }}" class="img-fluid rounded" alt="{{ recipe.name }}">
+            {% else %}
+            <img src="{{ MEDIA_URL }}no-image-icon-0.jpg" class="img-fluid rounded" alt="No Image Available">
+            {% endif %}
+        </div>
+
+        <!-- Recipe Details -->
+        <div class="col-md-6">
+            <h1 class="mb-0">{{ recipe.name }}</h1>
+            <!-- Rating -->
+            <div class="d-flex align-items-center my-2">
+                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B; margin-right: 4px;"></i>
+                <strong>{{ recipe.rating }}/5</strong>
+            </div>
+            <!-- Nutritional Info -->
+            <span>
+                <p><strong>Calories: </strong>{{ recipe.nutritional_value.calories}} Kcal | <strong>Protein:</strong> {{ recipe.nutritional_value.protein }} g |<strong>Carbohydrates:</strong>
+                    {{ recipe.nutritional_value.carbohydrates }} | <strong>Fat:</strong> {{ recipe.nutritional_value.fat }} g</p>
+            </span>
+            <!-- Serving Size -->
+            <p class="mb-3"><strong>Serving Size:</strong> {{ recipe.serving_size }}</p>
+            <hr>
+            <!-- Ingredients -->
+            <h5 class=" fw-bold mt-2">Ingredients</h5>
+            <hr>
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+            <hr>
+
+            <!-- Instructions -->
+            <h5 class="fw-bold mt-2">Method</h5>
+            <hr>
+            <ul>
+                {% for step in recipe.instructions.splitlines %}
+                <li>{{ step }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
