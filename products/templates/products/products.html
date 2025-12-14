@@ -103,4 +103,23 @@
     </div>
 </div>
 
+<!--Back to Top Button-->
+{% if products %}
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn rounded-1 def-btn text-uppercase text-center mb-5" id="btt-btn"
+        onclick="topFunction()">
+        <i class="fa-solid fa-chevron-up mx-2"></i>
+        Back to Top
+    </button>
+</div>
+{% endif %}
+<script>
+    let bttButton = document.getElementById("btt-btn");
+
+    bttButton.addEventListener("click", topFunction);
+
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+</script>
 {% endblock %}
