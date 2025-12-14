@@ -4,13 +4,31 @@
 body {
     font-family: 'Archivo', sans-serif;
     background-color: #f9f3ec;
-    color: #3333;
+    color: #333533;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     padding-top: 120px; 
 }
 
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 14px;
+}
+
+p.subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
 
 /* Navigation Bar */
 .custom-nav {
@@ -38,6 +56,28 @@ body {
     z-index: 999;
 } 
 
+.nav-link {
+    color: #333533 !important;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav-item:hover .nav-link {
+    color: #ec4e20 !important;
+    background-color: transparent !important;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar-toggler{
+    z-index: 10000;
+}
+
 /* Search Bar */
 .search-bar-top {
   background-color: #79b4e2 !important;
@@ -52,6 +92,16 @@ body {
   margin: 0 auto;   
 }
 
+/* Buttons */
+.def-btn{
+    background-color: #333533 !important;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 
 /* Footer */
 .custom-footer {
