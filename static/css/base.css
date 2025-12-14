@@ -109,3 +109,17 @@ p.subtitle {
     color: #ffffff !important;
     font-family: 'Archivo', sans-serif;
 }
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .navbar .navbar-collapse { 
+        position: fixed;
+        top: 46.6px;
+        left: 0;
+        width: 100%;
+        background-color: #f9f3ec;
+        padding: 1rem;
+        z-index: 1050;
+        box-shadow: 0 4px 4px #333533;
+    }
+}
