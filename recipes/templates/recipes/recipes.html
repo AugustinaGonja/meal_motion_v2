@@ -4,8 +4,12 @@
 {% block content %}
 
 <div class="container my-5">
-    <div class="mb-2 text-center">
+    <div class="mb-4 text-center">
+        {% if not current_categories %}
         <h1>Recipe Catalogue</h1>
+        {% else %}
+        <h1 class="text-center">{{ category_objects.first.friendly_name }}</h1>
+        {% endif %}
     </div>
     <hr>
     <!--Sort and Filter Buttons-->
@@ -16,11 +20,11 @@
             Filter By Category
         </button>
         <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-            <li><a class="dropdown-item" href="#">Meaty Dishes</a></li>
-            <li><a class="dropdown-item" href="#">High Protein</a></li>
-            <li><a class="dropdown-item" href="#">Vegetarian</a></li>
-            <li><a class="dropdown-item" href="#">Low Cal</a></li>
-            <li><a class="dropdown-item" href="#">Fish & Seafood</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=contains_meat">Meaty Dishes</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=high_protein">High Protein</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=vegetarian">Vegetarian</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=low_calorie">Low Cal</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=fish_and_seafood">Fish & Seafood</a></li>
         </ul>
 
         <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown"

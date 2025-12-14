@@ -47,10 +47,21 @@
           </ul>
         </li>
 
-        <!-- Regular Links -->
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'recipes' %}">Recipe Catalogue</a>
+        <!-- Recipe Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'recipes' %}" id="recipeDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Recipe Catalogue</a>
+          <ul class="dropdown-menu dropdown-nav-mobile w-100" aria-labelledby="recipeDropdown">
+            <li><a class="dropdown-item fw-bold" href="{% url 'recipes' %}">All Recipes</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=contains_meat">Meaty Dishes</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=high_protein">High Protein</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=vegetarian">Vegetarian</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=low_calorie">Low Cal</a></li>
+            <li><a class="dropdown-item" href="{% url 'recipes' %}?category=fish_and_seafood">Fish & Seafood</a></li>
+          </ul>
         </li>
+
+        <!-- Regular Links -->
         {% if user.is_authenticated %}
         <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
