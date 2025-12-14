@@ -1,0 +1,43 @@
+[
+  {
+    "pk": 1,
+    "model": "recipes.category",
+    "fields": {
+      "name": "contains_meat",
+      "friendly_name": "Contains Meat"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "recipes.category",
+    
+    "fields": {
+      "name": "vegetarian",
+      "friendly_name": "Vegetarian"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "recipes.category",
+    "fields": {
+      "name": "high_protein",
+      "friendly_name": "High-Protein"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "recipes.category",
+    "fields": {
+      "name": "low_calorie",
+      "friendly_name": "Low-Calorie"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "recipes.category",
+    "fields": {
+      "name": "fish_and_seafood",
+      "friendly_name": "Fish & Seafood"
+    }
+  }
+]

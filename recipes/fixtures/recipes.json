@@ -1,0 +1,674 @@
+[
+  { 
+      "pk": 1,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Lemon Herb Grilled Chicken",
+      "categories": [1, 3],
+      "serving_size": "1 plate",
+      "ingredients": [
+        "1 chicken breast",
+        "1 tbsp olive oil",
+        "1 tsp lemon zest",
+        "1 tsp garlic powder",
+        "Salt and pepper"
+      ],
+      "nutritional_value": {"calories": 310, "protein": 38, "carbohydrates": 2, "fat": 14},
+      "rating": 4.7,
+      "image_url": "https://www.eatyourselfskinny.com/wp-content/uploads/2024/04/lemon-chicken-2-1038x1536.jpg",
+      "image": "RC_1",
+      "instructions": "Marinate chicken with seasonings, grill 6-7 minutes per side."
+     }
+  },
+    {
+      "pk": 2,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef & Pepper Stir Fry",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "6 oz sliced beef",
+        "1 bell pepper",
+        "1 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "1 garlic clove"
+      ],
+      "nutritional_value": {"calories": 420, "protein": 34, "carbohydrates": 10, "fat": 26},
+      "rating": 4.6,
+      "image_url": "https://www.cubesnjuliennes.com/wp-content/uploads/2021/01/Chinese-Beef-Stir-Fry-Recipe.jpg",
+      "image": "RC_2",
+      "instructions": "Stir fry beef, add peppers and sauce, cook until tender."
+     }
+    },
+    {
+      "pk": 3,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Creamy Pesto Pasta",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1 cup pasta",
+        "2 tbsp pesto",
+        "2 tbsp cream",
+        "Salt & pepper"
+      ],
+      "nutritional_value": {"calories": 520, "protein": 12, "carbohydrates": 62, "fat": 26},
+      "rating": 4.4,
+      "image_url": "https://cdn.loveandlemons.com/wp-content/uploads/2025/07/pesto-pasta.jpg",
+      "image": "RC_3",
+      "instructions": "Cook pasta, stir in pesto and cream, simmer 2 minutes."
+     }
+    },
+    {
+      "pk": 4,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Turkey Chili",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1/2 lb ground turkey",
+        "1 cup beans",
+        "1 cup tomatoes",
+        "Chili seasoning"
+      ],
+      "nutritional_value": {"calories": 400, "protein": 34, "carbohydrates": 28, "fat": 12},
+      "rating": 4.8,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIHj2CCFPOuy_a51IHq3C8quW2k8SHRN9pqg&s",
+      "image": "RC_4",
+      "instructions": "Brown turkey, add beans and tomatoes, simmer 20 minutes."
+     }
+    },
+    {
+      "pk": 5,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Omelette",
+      "categories": [1, 4],
+      "serving_size": "1 omelette",
+      "ingredients": [
+        "2 eggs",
+        "Spinach",
+        "Bell peppers",
+        "2 tbsp cheese"
+      ],
+      "nutritional_value": {"calories": 280, "protein": 20, "carbohydrates": 6, "fat": 18},
+      "rating": 4.5,
+      "image_url": "https://www.shecooksrecipes.com/wp-content/uploads/2025/07/veggie-omelette-featured.webp",
+      "image": "RC_5",
+      "instructions": "Cook veggies, add eggs and cheese, fold and serve."
+     }
+    },
+    {
+      "pk": 6,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Quinoa Power Bowl",
+      "categories": [2, 4],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1/2 cup quinoa",
+        "1/4 avocado",
+        "Cherry tomatoes",
+        "Spinach"
+      ],
+      "nutritional_value": {"calories": 330, "protein": 11, "carbohydrates": 40, "fat": 12},
+      "rating": 4.7,
+      "image_url": "https://www.feastingathome.com/wp-content/uploads/2013/08/Quinoa-Chicken-Salad.jpg",
+      "image": "RC_6",
+      "instructions": "Assemble cooked quinoa with veggies and serve."
+     }
+    },
+    {
+      "pk": 7,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Baked Salmon & Asparagus",
+      "categories": [1, 5],
+      "serving_size": "1 plate",
+      "ingredients": [
+        "6 oz salmon",
+        "Asparagus",
+        "1 tbsp olive oil",
+        "Lemon"
+      ],
+      "nutritional_value": {"calories": 460, "protein": 40, "carbohydrates": 5, "fat": 28},
+      "rating": 4.9,
+      "image_url": "https://www.laurafuentes.com/wp-content/uploads/2022/06/salmon-asparragus_post_1.jpg",
+      "image": "RC_7",
+      "instructions": "Season salmon and bake with asparagus for 15 minutes."
+     }
+    },
+    {
+      "pk": 8,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Caesar Wrap",
+      "categories": [1, 3],
+      "serving_size": "1 wrap",
+      "ingredients": [
+        "Grilled chicken",
+        "Tortilla",
+        "Lettuce",
+        "Caesar dressing"
+      ],
+      "nutritional_value": {"calories": 510, "protein": 32, "carbohydrates": 42, "fat": 24},
+      "rating": 4.2,
+      "image_url": "https://www.cherryonmysundae.com/wp-content/uploads/2025/02/chicken-caesar-wrap-feature.jpg",
+      "image": "RC_8",
+      "instructions": "Fill tortilla with chicken, lettuce, dressing, wrap and serve."
+     }
+    },
+    {
+      "pk": 9,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Avocado Toast",
+      "categories": [2, 4],
+      "serving_size": "1 slice",
+      "ingredients": [
+        "1 slice whole wheat toast",
+        "1/2 avocado",
+        "Salt & pepper"
+      ],
+      "nutritional_value": {"calories": 250, "protein": 8, "carbohydrates": 22, "fat": 15},
+      "rating": 4.6,
+      "image_url": "https://thesaltypot.com/wp-content/uploads/2019/02/Avocado-Toast09.jpg",
+      "image": "RC_9",
+      "instructions": "Mash avocado on toast, season, and serve."
+     }
+    },
+    {
+      "pk": 10,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Shrimp Fried Rice",
+      "categories": [5],
+      "serving_size": "1 bowl",
+      "ingredients": [
+        "1 cup cooked rice",
+        "1/2 cup shrimp",
+        "Peas",
+        "Soy sauce"
+      ],
+      "nutritional_value": {"calories": 480, "protein": 28, "carbohydrates": 56, "fat": 12},
+      "rating": 4.4,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVdvCFio-lEUlytbp5wUj-raA33ot89QFM6Q&s",
+      "image": "RC_10",
+      "instructions": "Sauté shrimp, add rice and veggies, stir in soy sauce."
+     }
+    },
+    {
+      "pk": 11,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "BBQ Chicken Bowl",
+      "categories": [1, 3],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken breast", "BBQ sauce", "Corn", "Rice"],
+      "nutritional_value": {"calories": 520, "protein": 36, "carbohydrates": 48, "fat": 18},
+      "rating": 4.7,
+      "image_url": "https://realfoodwholelife.com/wp-content/uploads/2022/06/BBQ-Chicken-Bowl-3-1024x1536.jpg",
+      "image": "RC_11",
+      "instructions": "Grill chicken, slice, and serve over rice with BBQ sauce."
+     }
+    },
+    {
+      "pk": 12,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Tacos",
+      "categories": [1],
+      "serving_size": "2 tacos",
+      "ingredients": ["Ground beef", "Taco shells", "Lettuce", "Cheese"],
+      "nutritional_value": {"calories": 610, "protein": 28, "carbohydrates": 44, "fat": 32},
+      "rating": 4.6,
+      "image_url": "https://loveandgoodstuff.com/wp-content/uploads/2020/08/classic-ground-beef-tacos-1200x1200.jpg",
+      "image": "RC_12",
+      "instructions": "Cook beef with seasoning, assemble tacos with toppings."
+     }
+    },
+    {
+      "pk": 13,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Tofu Teriyaki Bowl",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Tofu", "Teriyaki sauce", "Rice", "Broccoli"],
+      "nutritional_value": {"calories": 420, "protein": 18, "carbohydrates": 55, "fat": 12},
+      "rating": 4.8,
+      "image_url": "https://www.noracooks.com/wp-content/uploads/2023/07/teriyaki-tofu-1-2.jpg",
+      "image": "RC_13",
+      "instructions": "Pan fry tofu, add sauce, serve over rice with broccoli."
+     }
+    },
+    {
+      "pk": 14,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Cheesy Broccoli Soup",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Broccoli", "Cheddar", "Milk", "Garlic"],
+      "nutritional_value": {"calories": 360, "protein": 16, "carbohydrates": 22, "fat": 20},
+      "rating": 4.5,
+      "image_url": "https://tastesbetterfromscratch.com/wp-content/uploads/2019/08/Broccoli-Cheese-Soup-10-1-500x500.jpg",
+      "image": "RC_14",
+      "instructions": "Simmer broccoli, blend with cheese and milk."
+     }
+    },
+
+    {
+      "pk": 15,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Noodle Soup",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken", "Noodles", "Carrots", "Celery"],
+      "nutritional_value": {"calories": 310, "protein": 22, "carbohydrates": 32, "fat": 8},
+      "rating": 4.7,
+      "image_url": "https://www.recipetineats.com/tachyon/2017/05/Chicken-Noodle-Soup-from-scratch_3.jpg",
+      "image": "RC_15",
+      "instructions": "Simmer chicken with noodles and vegetables."
+     }
+    },
+
+    {
+      "pk": 16,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Stir Fry",
+      "categories": [2, 4],
+      "serving_size": "1 bowl",
+      "ingredients": ["Broccoli", "Carrots", "Bell pepper", "Soy sauce"],
+      "nutritional_value": {"calories": 210, "protein": 5, "carbohydrates": 28, "fat": 8},
+      "rating": 4.4,
+      "image_url": "https://images.themodernproper.com/production/posts/VegetableStirFry_9.jpg?w=1200&h=1200&q=60&fm=jpg&fit=crop&dm=1703377301&s=79d95f7318643d92c30863f226d5eb8e",
+      "image": "RC_16",
+      "instructions": "Stir fry vegetables with sauce until tender."
+     }
+    },
+
+    {
+      "pk": 17,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Baked Tilapia",
+      "categories": [5, 3],
+      "serving_size": "1 fillet",
+      "ingredients": ["Tilapia", "Lemon", "Garlic", "Butter"],
+      "nutritional_value": {"calories": 280, "protein": 36, "carbohydrates": 1, "fat": 12},
+      "rating": 4.8,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSouOXKIKBUDZOFBbHtTdvbIrIPaPi1kR9Ptg&s",
+      "image": "RC_17",
+      "instructions": "Season fish and bake for 12 minutes."
+     }
+    },
+
+    {
+      "pk": 18,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Alfredo",
+      "categories": [1, 3],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken breast", "Pasta", "Cream", "Parmesan"],
+      "nutritional_value": {"calories": 720, "protein": 40, "carbohydrates": 60, "fat": 36},
+      "rating": 4.6,
+      "image_url": "https://midwestfoodieblog.com/wp-content/uploads/2023/07/chicken-alfredo-1-2.jpg",
+      "image": "RC_18",
+      "instructions": "Cook pasta, stir in creamy Alfredo, add chicken."
+     }
+    },
+
+    {
+      "pk": 19,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Burger",
+      "categories": [1],
+      "serving_size": "1 burger",
+      "ingredients": ["Beef patty", "Bun", "Lettuce", "Tomato"],
+      "nutritional_value": {"calories": 650, "protein": 35, "carbohydrates": 40, "fat": 38},
+      "rating": 4.3,
+      "image_url": "https://media-cdn2.greatbritishchefs.com/media/xd1av5ag/img25737.whqc_768x512q90.jpg",
+      "image": "RC_19",
+      "instructions": "Grill beef patty, assemble burger with toppings."
+     }
+    },
+
+    {
+      "pk": 20,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Grilled Veggie Sandwich",
+      "categories": [2],
+      "serving_size": "1 sandwich",
+      "ingredients": ["Zucchini", "Bell pepper", "Cheese", "Bread"],
+      "nutritional_value": {"calories": 420, "protein": 14, "carbohydrates": 52, "fat": 16},
+      "rating": 4.5,
+      "image_url": "https://wholefully.com/wp-content/uploads/2016/07/grilled-veggie-sandwich-4.jpg",
+      "image": "RC_20",
+      "instructions": "Grill veggies and assemble sandwich with cheese."
+     }
+    },
+
+    {
+      "pk": 21,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Steak & Potatoes",
+      "categories": [1],
+      "serving_size": "1 plate",
+      "ingredients": ["Steak", "Potatoes", "Salt", "Pepper"],
+      "nutritional_value": {"calories": 610, "protein": 42, "carbohydrates": 28, "fat": 36},
+      "rating": 4.8,
+      "image_url": "https://www.lecremedelacrumb.com/wp-content/uploads/2019/03/steak-potatoes-skillet-3.jpg",
+      "image": "RC_21",
+      "instructions": "Pan-sear steak, roast potatoes, serve together."
+     }
+    },
+
+    {
+      "pk": 22,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Vegan Burrito",
+      "categories": [2],
+      "serving_size": "1 wrap",
+      "ingredients": ["Beans", "Rice", "Lettuce", "Tomato"],
+      "nutritional_value": {"calories": 480, "protein": 14, "carbohydrates": 72, "fat": 12},
+      "rating": 4.6,
+      "image_url": "https://plantedinthekitchen.com/wp-content/uploads/2021/12/Vegan-Burrito-11.jpg",
+      "image": "RC_22",
+      "instructions": "Fill tortilla with beans, rice, and veggies, wrap tightly."
+     }
+    },
+
+    {
+      "pk": 23,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Pita",
+      "categories": [1],
+      "serving_size": "1 pita",
+      "ingredients": ["Grilled chicken", "Pita", "Yogurt sauce", "Cucumber"],
+      "nutritional_value": {"calories": 540, "protein": 32, "carbohydrates": 48, "fat": 22},
+      "rating": 4.5,
+      "image_url": "https://www.thefooddoctor.com/wp-content/uploads/2019/12/chicken-tikka-pitta-pockets-min-scaled.jpg",
+      "image": "RC_23",
+      "instructions": "Stuff pita with chicken and veggies, drizzle sauce."
+     }
+    },
+
+    {
+      "pk": 24,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Cheese Quesadilla",
+      "categories": [2],
+      "serving_size": "1 quesadilla",
+      "ingredients": ["Tortilla", "Cheddar cheese"],
+      "nutritional_value": {"calories": 420, "protein": 15, "carbohydrates": 28, "fat": 26},
+      "rating": 4.2,
+      "image_url": "https://kidsactivityzone.com/wp-content/uploads/2024/09/Cheese-Quesadilla-14-of-26.jpg",
+      "image": "RC_24",
+      "instructions": "Melt cheese in tortilla on skillet."
+     }
+    },
+
+    {
+      "pk": 25,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Salmon Poke Bowl",
+      "categories": [5, 1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Salmon", "Rice", "Cucumber", "Sesame"],
+      "nutritional_value": {"calories": 520, "protein": 36, "carbohydrates": 48, "fat": 20},
+      "rating": 4.9,
+      "image_url": "https://seasonandthyme.com/wp-content/uploads/2024/04/cooked-salmon-poke-bowl-featured.jpgl",
+      "image": "RC_25",
+      "instructions": "Assemble bowl with rice, salmon, and toppings."
+     }
+    },
+
+    {
+      "pk": 26,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Pancakes with Syrup",
+      "categories": [2],
+      "serving_size": "3 pancakes",
+      "ingredients": ["Flour", "Milk", "Egg", "Syrup"],
+      "nutritional_value": {"calories": 560, "protein": 12, "carbohydrates": 84, "fat": 18},
+      "rating": 4.3,
+      "image_url": "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/fluffyamericanpancak_74828_16x9.jpg",
+      "image": "RC_26",
+      "instructions": "Mix batter, cook pancakes, add syrup."
+     }
+    },
+    {
+      "pk": 27,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Pizza",
+      "categories": [2],
+      "serving_size": "2 slices",
+      "ingredients": ["Pizza dough", "Cheese", "Tomato sauce", "Veggies"],
+      "nutritional_value": {"calories": 470, "protein": 18, "carbohydrates": 56, "fat": 18},
+      "rating": 4.5,
+      "image_url": "https://cookieandkate.com/images/2020/10/best-veggie-pizza-recipe-1.jpg",
+      "image": "RC_27",
+      "instructions": "Assemble pizza and bake until golden."
+     }
+    },
+
+    {
+      "pk": 28,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Rice Bowl",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Ground beef", "Rice", "Green onions", "Soy sauce"],
+      "nutritional_value": {"calories": 580, "protein": 32, "carbohydrates": 48, "fat": 28},
+      "rating": 4.4,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-c_DFJE0mGlcbqalX_YLk3ToxPc1YymZQCA&s",
+      "image": "RC_28",
+      "instructions": "Cook beef, serve over rice with sauce."
+     }
+    },
+
+    {
+      "pk": 29,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Vegetable Soup",
+      "categories": [2,4],
+      "serving_size": "1 bowl",
+      "ingredients": ["Carrots", "Celery", "Potatoes", "Broth"],
+      "nutritional_value": {"calories": 180, "protein": 4, "carbohydrates": 32, "fat": 3},
+      "rating": 4.2,
+      "image_url": "https://thecozyapron.com/wp-content/uploads/2018/07/vegetable-soup_thecozyapron_1.jpg",
+      "image": "RC_29",
+      "instructions": "Simmer vegetables in broth until soft."
+     }
+    },
+
+    {
+      "pk": 30,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Burrito Bowl",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken", "Rice", "Beans", "Corn"],
+      "nutritional_value": {"calories": 560, "protein": 42, "carbohydrates": 60, "fat": 16},
+      "rating": 4.8,
+      "image_url": "https://www.simplyrecipes.com/thmb/nlKPYgXiDFmgvz12KqtggUYba-c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2016__07__2016-08-03-BBQ-Chicken-Bowls-9-a194953f9f1940e3938265f2fd8d7813.jpg",
+      "image": "RC_30",
+      "instructions": "Assemble bowl with rice, chicken, and toppings."
+     }
+    },
+
+    {
+      "pk": 31,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Pasta",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Ground beef", "Pasta", "Tomato sauce"],
+      "nutritional_value": {"calories": 680, "protein": 35, "carbohydrates": 68, "fat": 30},
+      "rating": 4.3,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfok3ERVC1Fxk7B1C0i_9OtFoY-KEZy-uoA&s",
+      "image": "RC_31",
+      "instructions": "Cook pasta, add beef and sauce, stir."
+     }
+    },
+
+    {
+      "pk": 32,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Spinach Salad",
+      "categories": [2, 4],
+      "serving_size": "1 bowl",
+      "ingredients": ["Spinach", "Tomatoes", "Feta cheese", "Olive oil"],
+      "nutritional_value": {"calories": 250, "protein": 8, "carbohydrates": 10, "fat": 18},
+      "rating": 4.5,
+      "image_url": "https://sabrinacurrie.com/wp-content/uploads/2023/12/Easy-Greek-Spinach-Salad-Recipe-With-Feta-And-Lemon-16.jpg",
+      "image": "RC_32",
+      "instructions": "Mix ingredients in a bowl and serve."
+     }
+    },
+
+    {
+      "pk": 33,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Curry",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken", "Coconut milk", "Curry powder"],
+      "nutritional_value": {"calories": 520, "protein": 38, "carbohydrates": 10, "fat": 34},
+      "rating": 4.7,
+      "image_url": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_curry_61994_16x9.jpg",
+      "image": "RC_33",
+      "instructions": "Cook chicken, add curry sauce, simmer."
+     }
+    },
+    {
+      "pk": 34,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Wrap",
+      "categories": [2, 4],
+      "serving_size": "1 wrap",
+      "ingredients": ["Tortilla", "Lettuce", "Veggies", "Hummus"],
+      "nutritional_value": {"calories": 340, "protein": 8, "carbohydrates": 46, "fat": 12},
+      "rating": 4.4,
+      "image_url": "https://www.bowlofdelicious.com/wp-content/uploads/2014/01/Veggie-Wraps-square.jpgp",
+      "image": "RC_34",
+      "instructions": "Spread hummus, add veggies, roll tightly."
+     }
+    },
+    {
+      "pk": 35,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Grilled Pork Chops",
+      "categories": [1, 3],
+      "serving_size": "1 plate",
+      "ingredients": ["Pork chops", "Salt", "Pepper", "Garlic"],
+      "nutritional_value": {"calories": 490, "protein": 42, "carbohydrates": 0, "fat": 32},
+      "rating": 4.6,
+      "image_url": "https://www.wellplated.com/wp-content/uploads/2021/07/Plain-Grilled-Pork-Chops.jpg",
+      "image": "RC_35",
+      "instructions": "Season and grill pork for 4-5 minutes each side."
+     }
+    },
+    {
+      "pk": 36,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Cheese Pasta",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Pasta", "Cheddar", "Butter"],
+      "nutritional_value": {"calories": 640, "protein": 18, "carbohydrates": 72, "fat": 28},
+      "rating": 4.1,
+      "image_url": "https://www.lovefromtheoven.com/wp-content/uploads/2023/04/one-pot-mac-cheese-17.jpg",
+      "image": "RC_36",
+      "instructions": "Cook pasta, melt cheese and butter into sauce."
+     }
+    },
+    {
+      "pk": 37,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Vegan Buddha Bowl",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Sweet potatoes", "Chickpeas", "Spinach", "Tahini"],
+      "nutritional_value": {"calories": 440, "protein": 14, "carbohydrates": 58, "fat": 16},
+      "rating": 4.9,
+      "image_url": "https://heartfultable.com/wp-content/uploads/2021/05/Quinoa-and-Chickpea-Buddha-Bowl-with-Tahini-Dressing.jpg",
+      "image": "RC_37",
+      "instructions": "Roast ingredients and assemble into bowl."
+     }
+    },
+
+    {
+      "pk": 38,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Chicken Salad",
+      "categories": [1, 3],
+      "serving_size": "1 bowl",
+      "ingredients": ["Chicken breast", "Lettuce", "Olive oil"],
+      "nutritional_value": {"calories": 320, "protein": 38, "carbohydrates": 4, "fat": 16},
+      "rating": 4.7,
+      "image_url": "https://www.skinnytaste.com/wp-content/uploads/2008/07/Classic-Chicken-Salad-4.jpg",
+      "image": "RC_38",
+      "instructions": "Mix cooked chicken with fresh greens."
+     }
+    },
+
+    {
+      "pk": 39,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Beef Stew",
+      "categories": [1],
+      "serving_size": "1 bowl",
+      "ingredients": ["Beef chunks", "Carrots", "Potatoes", "Broth"],
+      "nutritional_value": {"calories": 480, "protein": 36, "carbohydrates": 28, "fat": 22},
+      "rating": 4.8,
+      "image_url": "https://static01.nyt.com/images/2024/10/28/multimedia/beef-stew-mlfk/beef-stew-mlfk-mediumSquareAt3X.jpg",
+      "image": "RC_39",
+      "instructions": "Simmer all ingredients for 1 hour."
+     }
+    },
+
+    {
+      "pk": 40,
+      "model": "recipes.recipe",
+      "fields":{
+      "name": "Veggie Fried Rice",
+      "categories": [2],
+      "serving_size": "1 bowl",
+      "ingredients": ["Rice", "Egg", "Peas", "Carrots", "Soy sauce"],
+      "nutritional_value": {"calories": 420, "protein": 14, "carbohydrates": 54, "fat": 12},
+      "rating": 4.3,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVj6dMQ0NpkQ9EgJ-Kx9RExCSCF1go4iMJlw&s",
+      "image": "RC_40",
+      "instructions": "Stir fry rice with veggies and scrambled egg."
+     }
+    }
+]

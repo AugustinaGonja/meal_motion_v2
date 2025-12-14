@@ -1,0 +1,279 @@
+[
+    {
+      "pk": 1,
+      "model":"products.product",
+      "fields":{
+      "name": "ProMax Whey Blend",
+      "category": 1,
+      "price": 38.99,
+      "description": "Premium whey protein blend for muscle recovery and growth.",
+      "rating": 4.8,
+      "image_url":"https://m.media-amazon.com/images/I/41WltMQytvL._SL500_._SS800_.jpg" ,
+      "image":"PC_1.jpg" 
+      }
+    
+    },
+    {
+      "pk": 2,
+      "model":"products.product",
+      "fields":{
+      "name": "PureLift Creatine Powder",
+      "category": 1,
+      "price": 23.99,
+      "description": "Micronized creatine for improved strength and workout performance.",
+      "rating": 4.7,
+      "image_url": "https://www.supplementneeds.co.uk/cdn/shop/files/SupplementNeedsCreatineMonohydrate.png?v=1697629471",
+      "image":"PC_2.jpg" 
+      }
+
+    },
+    {
+      "pk": 3,
+      "model":"products.product",
+      "fields":{
+      "name": "FuelBar Protein Snack",
+      "category": 1,
+      "price": 2.29,
+      "description": "High-protein, low-sugar bar made with natural ingredients.",
+      "rating": 4.6,
+      "image_url": "https://www.npl.za.com/cdn/shop/files/CocoaChocolate_a4b33a60-accc-4ad9-91a6-0b04c6972bb1.png?v=1735797834&width=1000",
+      "image": "PC_3.jpg"
+      }
+
+    },
+    {
+      "pk": 4,
+      "model":"products.product",
+      "fields":{
+      "name": "HydroMate Flask 32oz",
+      "category": 2,
+      "price": 42.99,
+      "description": "Double-wall insulated flask that keeps drinks cold for 24 hours.",
+      "rating": 4.9,
+      "image_url": "https://assets.kogan.com/images/brillianthomeliv/BHL-7556230774969-43518523277497/1-ceb5ed5664-hydro-mate-extra-large-insulated-stainless-steel-water-bottle-black-brilliant-home-living-3.jpg?auto=webp&bg-color=fff&canvas=1200%2C800&dpr=1&enable=upscale&fit=bounds&height=800&quality=90&width=1200",
+      "image": "PC_4.jpg"
+      }
+
+    },
+    {
+      "pk": 5,
+      "model":"products.product",
+      "fields":{
+      "name": "FitTrack Motion Band",
+      "category": 3,
+      "price": 129.99,
+      "description": "Smart wristband that monitors activity, heart rate, and workouts.",
+      "rating": 4.5,
+      "image_url": "https://www.jdwilliams.co.uk/products/wo/wo023/a01wo023507s.jpg",
+      "image": "PC_5.jpg"
+      }
+
+    },
+    {
+      "pk": 6,
+      "model":"products.product",
+      "fields":{
+      "name": "FlexBand Resistance Kit",
+      "category": 3,
+      "price": 18.99,
+      "description": "Durable resistance bands for versatile home workouts.",
+      "rating": 4.7,
+      "image_url": "https://www.primalstrength.com/cdn/shop/files/PSPBSET-ProPowerbandsSet-ResistanceBands-HeroRender2.png?v=1753793038",
+      "image": "PC_6.jpg"
+      }
+
+    },
+    {
+      "pk": 7,
+      "model":"products.product",
+      "fields":{
+      "name": "ZenMat Yoga Pro",
+      "category": 3,
+      "price": 28.49,
+      "description": "Eco-friendly non-slip yoga mat for all fitness levels.",
+      "rating": 4.8,
+      "image_url": "https://www.soul-destiny.co.uk/user/products/Pink_TPE.jpg",
+      "image": "PC_7.jpg"
+      }
+
+    },
+    {
+      "pk": 8,
+      "model":"products.product",
+      "fields":{
+      "name": "Endura BCAA Energy Drink",
+      "category": 1,
+      "price": 3.29,
+      "description": "On-the-go amino acid drink with electrolytes for recovery and focus.",
+      "rating": 4.4,
+      "image_url": "https://za.usn.global/cdn/shop/products/bcaa-renders-01_3.webp?v=1693985877&width=1445",
+      "image": "PC_8.jpg"
+      }
+
+    },
+    {
+      "pk": 9,
+      "model":"products.product",
+      "fields":{
+      "name": "BodySync Smart Scale",
+      "category": 3,
+      "price": 47.99,
+      "description": "Bluetooth scale measuring weight, BMI, and muscle mass.",
+      "rating": 4.6,
+      "image_url": "https://media.johnlewiscontent.com/i/JohnLewis/239969895alt2?fmt=auto&$background-off-white$",
+      "image": "PC_9.jpg"
+      }
+
+    },
+    {
+      "pk": 10,
+      "model":"products.product",
+      "fields":{
+      "name": "MealMate Prep Containers",
+      "category": 4,
+      "price": 21.99,
+      "description": "Reusable BPA-free containers for meal prepping and portion control.",
+      "rating": 4.7,
+      "image_url": "https://igluumealprep.com/cdn/shop/products/10packmainphoto.jpg?v=1662033697&width=1946",
+      "image": "PC_10.jpg"
+      }
+
+    },
+    {
+      "pk": 11,
+      "model":"products.product",
+      "fields":{
+      "name": "PureBlend Performance Blender",
+      "category": 4,
+      "price": 84.99,
+      "description": "High-speed kitchen blender built for smoothies and shakes.",
+      "rating": 4.8,
+      "image_url": "https://media.nisbets.com/asset/core/prodimage/large_new/jb523_npi25.jpg",
+      "image": "PC_11.jpg"
+      }
+
+    },
+    {
+      "pk": 12,
+      "model":"products.product",
+      "fields":{
+      "name": "NutriWeigh Digital Scale Pro",
+      "category": 4,
+      "price": 32.5,
+      "description": "Precision food scale for accurate portion tracking.",
+      "rating": 4.7,
+      "image_url": "https://cdn11.bigcommerce.com/s-60yzq6/images/stencil/1280x1280/products/759/19524/12064_-_DIGITAL_PLATFORM_SCALES_-_5KG__99044.1754054205.jpg?c=2",
+      "image": "PC_12.jpg"
+      }
+
+    },
+    {
+      "pk": 13,
+      "model":"products.product",
+      "fields":{
+      "name": "FlexCore Adjustable Dumbbells",
+      "category": 3,
+      "price": 279.0,
+      "description": "All-in-one dumbbell system allowing quick weight changes.",
+      "rating": 4.9,
+      "image_url": "https://eu.braingain.fit/cdn/shop/files/40kg-Adjustable-Dumbbell-Pair-BRAINGAIN-_1.webp?v=1756296624&width=1500",
+      "image": "PC_13.jpg"
+      }
+
+    },
+    {
+      "pk": 14,
+      "model":"products.product",
+      "fields":{
+      "name": "RecoverRoll Massage Cylinder",
+      "category": 3,
+      "price": 25.99,
+      "description": "Textured foam roller for deep muscle recovery and mobility.",
+      "rating": 4.6,
+      "image_url": "https://contents.mediadecathlon.com/p2437110/k$a66852d9073715092009de0dea0f61a7/picture.jpg?format=auto&f=3000x0",
+      "image": "PC_14.jpg"
+      }
+
+    },
+    {
+      "pk": 15,
+      "model":"products.product",
+      "fields":{
+      "name": "HydraFuel Electrolyte Mix",
+      "category": 1,
+      "price": 19.99,
+      "description": "Refreshing hydration formula with essential electrolytes.",
+      "rating": 4.5,
+      "image_url": "https://images.bike24.com/i/mb/8c/4d/bc/sis-hydro-sticks-20x4-1855440.jpg",
+      "image": "PC_15.jpg"
+      }
+
+    },
+    {
+      "pk": 16,
+      "model":"products.product",
+      "fields":{
+      "name": "Ignite Pre-Workout Boost",
+      "category": 1,
+      "price": 36.75,
+      "description": "Pre-workout blend for energy, endurance, and focus.",
+      "rating": 4.7,
+      "image_url": "https://4endurance.co.uk/cdn/shop/files/Untitleddesign_29_1024x.png?v=1752575068",
+      "image": "PC_16.jpg"
+      }
+    },
+    {
+      "pk": 17,
+      "model":"products.product",
+      "fields":{
+      "name": "ThermoFlow Insulated Bottle",
+      "category": 2,
+      "price": 27.99,
+      "description": "Vacuum-insulated bottle to keep drinks cold or hot for hours.",
+      "rating": 4.8,
+      "image_url": "https://www.ion8.co.uk/cdn/shop/files/B0BB3DQCK7.MAIN.jpg?v=1750937559&width=1946",
+      "image": "PC_17.jpg"
+      }
+    },
+    {
+      "pk": 18,
+      "model":"products.product",
+      "fields":{
+      "name": "Protein Shaker",
+      "category": 2,
+      "price": 14.49,
+      "description": "Leak-proof staineless steel shaker.",
+      "rating": 4.6,
+      "image_url": "https://tropeaka.co.uk/cdn/shop/files/shaker-ss-02_1024x1024.jpg?v=1716788987",
+      "image": "PC_18.jpg"
+      }
+
+    },
+    {
+      "pk": 19,
+      "model":"products.product",
+      "fields":{
+      "name": "CoreBell Adjustable Kettlebell",
+      "category": 3,
+      "price": 149.99,
+      "description": "Compact kettlebell with adjustable weights for strength training.",
+      "rating": 4.8,
+      "image_url": "https://www.primalstrength.com/cdn/shop/files/AdjustbleKettlebell_white_d3bf3420-f789-44fc-b717-9eb9f26da6e6.jpg?v=1697119191",
+      "image": "PC_19.jpg"
+      }
+
+    },
+    {
+      "pk": 20,
+      "model":"products.product",
+      "fields":{
+      "name": "PrepEase Cutting Board Set",
+      "category": 4,
+      "price": 42.0,
+      "description": "Eco-friendly cutting boards with portion guides for meal prep.",
+      "rating": 4.7,
+      "image_url": "https://m.media-amazon.com/images/I/71t1DQ5HrZL.jpg",
+      "image":"PC_20.jpg"
+      }
+    }
+  ]
