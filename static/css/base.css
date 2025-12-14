@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Archivo', sans-serif;
+    background-color: #f9f3ec;
+    color: #3333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 120px; 
+}
+
+
+/* Navigation Bar */
+.custom-nav {
+    background-color: #f9f3ec !important;
+    height: 64px;
+    margin-top: 46.6px; 
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #333533 !important;
+}
+
+#nav-banner {
+    background-color: #333533;
+    color: #ffffff;
+    position: fixed;
+    top: 110.6px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+} 
+
+/* Search Bar */
+.search-bar-top {
+  background-color: #79b4e2 !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100; 
+}
+
+.search-bar-top form {
+  width: 50%;
+  margin: 0 auto;   
+}
+
+
+/* Footer */
+.custom-footer {
+    background-color: #ec4e20 !important;
+    color: #ffffff !important;
+    font-family: 'Archivo', sans-serif;
+}
