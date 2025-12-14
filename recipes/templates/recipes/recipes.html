@@ -10,11 +10,19 @@
         {% else %}
         <h1 class="text-center">{{ category_objects.first.friendly_name }}</h1>
         {% endif %}
+        <p>
+            {% if search_term or current_categories or current_sorting %}
+            <span><a class="link-offset-1" href="{% url 'recipes' %}">Recipe Catalogue</a> | </span>
+            {% else %}
+            <span><a class="link-offset-1" href="{% url 'home' %}">Return to Home</a> | </span>
+            {% endif %}
+            {{total_recipes}} Recipes {% if search_term %} found for "{{search_term}}"{% endif %}
+        </p>
     </div>
     <hr>
+
     <!--Sort and Filter Buttons-->
     <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
-
         <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown"
             data-bs-toggle="dropdown" aria-expanded="false">
             Filter By Category

@@ -38,12 +38,14 @@ def recipe_list(request):
         categories_names = request.GET['category'].split(',')
         recipes = recipes.filter(categories__name__in=categories_names)
         category_objects = Category.objects.filter(name__in=categories_names)
-
+        total_recipes = recipes.count()
+        
     context = {
         'recipes' : recipes,
         'current_categories': categories_names,
         'category_objects': category_objects,
         'current_sorting': sort,
+        'total_recipes':total_recipes,
     }
 
     return render(request, 'recipes/recipes.html', context)
