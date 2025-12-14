@@ -1,0 +1,86 @@
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow-sm ">
+  <div class="container-fluid d-flex align-items-center">
+    <div class="d-flex align-items-center order-1">
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <i class="fa-solid fa-utensils fa-sm m-3"></i>
+        MEALMOTION
+      </a>
+    </div>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-center" id="mainNav">
+      <ul class="navbar-nav mx-auto gap-2 gap-lg-3 text-center align-items-center">
+        <!--Home Link-->
+        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+        <!-- Shop Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Fitness & Nutrition Shop</a>
+          <ul class="dropdown-menu dropdown-nav-mobile w-100" aria-labelledby="shopDropdown">
+            <li><a class="dropdown-item fw-bold" href="#">All Products</a></li>
+            <li><a class="dropdown-item" href="#">Supplements</a></li>
+            <li><a class="dropdown-item" href="#">Hydration</a></li>
+            <li><a class="dropdown-item" href="#">Fitness Equipment</a>
+            </li>
+            <li><a class="dropdown-item" href="#">Kitchen Tools</a></li>
+          </ul>
+        </li>
+
+        <!-- Regular Links -->
+        <li class="nav-item">
+          <a class="nav-link fw-bold" href="#">Recipe Catalogue</a>
+        </li>
+
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+        {% else %}
+        <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <!-- Nav Icons -->
+    <div class="d-flex align-items-center gap-3 order-2 order-lg-3 ms-auto flex-nowrap">
+      {% if user.is_authenticated %}
+      {% if user.is_superuser %}
+      <div class="nav-icon">
+        <a href="#" class="text-reset">
+          <i class="fa-solid fa-gears fa-xl mx-3"></i>
+        </a>
+        <a href="#" class="text-reset">
+          <i class="fa-solid fa-user fa-lg"></i>
+        </a>
+      </div>
+      {% else %}
+      <div class="nav-icon">
+        <a href="#" class="text-reset">
+          <i class="fa-solid fa-user fa-lg"></i>
+        </a>
+      </div>
+      {% endif %}
+      {% else %}
+      <a href="#" class="text-reset">
+        <i class="fa-solid fa-user fa-lg"></i>
+      </a>
+      {% endif %}
+
+
+      <div class="nav-icon position-relative">
+        <a href="#" class="text-reset text-decoration-none">
+          {% if grand_total %}
+          <i class="fa-solid fa-bag-shopping fa-bounce fa-lg bag"></i>
+          {% else %}
+          <i class="fa-solid fa-bag-shopping fa-lg"></i>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
