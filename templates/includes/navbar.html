@@ -1,6 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow-sm ">
   <div class="container-fluid d-flex align-items-center">
     <div class="d-flex align-items-center order-1">
+      
       <!-- Toggler for mobile -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,8 +18,8 @@
     <!-- Collapsible Content -->
     <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-center" id="mainNav">
       <ul class="navbar-nav mx-auto gap-2 gap-lg-3 text-center align-items-center">
-        <!--Home Link-->
         <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+        
         <!-- Shop Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
@@ -35,13 +36,12 @@
 
         <!-- Regular Links -->
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="#">Recipe Catalogue</a>
+          <a class="nav-link" href="#">Recipe Catalogue</a>
         </li>
-
         {% if user.is_authenticated %}
-        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
-        <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Membership</a></li>
         {% endif %}
       </ul>
     </div>
@@ -66,12 +66,10 @@
       </div>
       {% endif %}
       {% else %}
-      <a href="#" class="text-reset">
+      <a href="{% url 'account_login' %}" class="text-reset">
         <i class="fa-solid fa-user fa-lg"></i>
       </a>
       {% endif %}
-
-
       <div class="nav-icon position-relative">
         <a href="#" class="text-reset text-decoration-none">
           {% if grand_total %}
