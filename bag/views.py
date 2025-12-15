@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+
+from products.models import Product
 
 # Create your views here.
 
@@ -16,14 +18,19 @@ def shopping_bag(request):
 def add_items(request, item_id):
     """ View quantity of indiviual items added to bag. """
 
+    product = get_object_or_404(Product, pk=item_id)
+
+
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
+        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
+        messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
