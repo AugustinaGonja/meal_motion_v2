@@ -47,3 +47,17 @@ def update_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(request.POST.get('redirect_url', 'shopping_bag'))
+
+def remove_item(request, item_id):
+    
+    """ 
+    View to remove item directly from the shopping bag. 
+    
+    """
+
+    bag = request.session.get('bag', {})
+    bag.pop(item_id, None)
+
+    messages.success(request, 'Item removed.')
+    request.session['bag'] = bag
+    return redirect(reverse('bag'))
