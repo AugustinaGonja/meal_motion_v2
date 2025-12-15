@@ -61,7 +61,7 @@
 
                     <!--Remove Item-->
                     <div class="col-1 col-md-2 remove-item">
-                        <form action="#" method="POST">
+                        <form action="{% url 'remove_item' item.item_id %}" method="POST">
                             {% csrf_token %}
                             <button type="submit" style="border: none; background:none ;">
                                 <i class="fa-solid fa-trash-can" style="color: #a31621;"></i>
