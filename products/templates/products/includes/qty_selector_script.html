@@ -1,0 +1,31 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    // INCREMENT buttons
+    let incrementButtons = document.querySelectorAll("button[id^='increment-qty_']");
+    for (let i = 0; i < incrementButtons.length; i++) {
+        incrementButtons[i].addEventListener("click", function() {
+            let id = this.getAttribute("data-item-id");
+            let input = document.getElementById("id_qty_" + id);
+            let value = parseInt(input.value, 10) || 1;
+            if (value < 99) {
+                input.value = value + 1;
+            }
+        });
+    }
+
+    // DECREMENT buttons
+    let decrementButtons = document.querySelectorAll("button[id^='decrement-qty_']");
+    for (let i = 0; i < decrementButtons.length; i++) {
+        decrementButtons[i].addEventListener("click", function() {
+            let id = this.getAttribute("data-item-id");
+            let input = document.getElementById("id_qty_" + id);
+            let value = parseInt(input.value, 10) || 1;
+            if (value > 1) {
+                input.value = value - 1;
+            }
+        });
+    }
+
+});
+</script>
