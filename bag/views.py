@@ -6,7 +6,7 @@ from django.contrib import messages
 def shopping_bag(request):
     
     """ 
-    View rendering shopping bag page
+    View rendering shopping bag page.
      
     """
 
@@ -14,7 +14,7 @@ def shopping_bag(request):
 
 
 def add_items(request, item_id):
-    """ View quantity of indiviual items added to bag """
+    """ View quantity of indiviual items added to bag. """
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -27,3 +27,23 @@ def add_items(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+def update_bag(request, item_id):
+
+    """ 
+    View to update qty of items directly from the shopping bag. 
+    
+    """
+
+    quantity = int(request.POST.get('quantity', 1))
+    bag = request.session.get('bag', {})
+    
+    if quantity > 0 :
+        bag[item_id] = quantity
+        messages.success(request, 'Item quantity updated.')
+    else:
+        bag.pop(item_id, None)
+        messages.success(request , 'Item removed.')
+
+    request.session['bag'] = bag
+    return redirect(request.POST.get('redirect_url', 'shopping_bag'))
