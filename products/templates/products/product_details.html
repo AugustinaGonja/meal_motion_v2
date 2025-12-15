@@ -37,7 +37,7 @@
             <h3 class="fw-bold mb-4">£ {{ product.price }}</h3>
 
              <!-- QTY Selector -->
-            <form method="POST" action="#">
+            <form method="POST" action="{% url 'add_items' product.id %}">
                 {% csrf_token %}
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <div class="mb-3">
