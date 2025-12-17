@@ -16,9 +16,14 @@
                     <br>Your order number is <strong>{{ order.order_number }}</strong>
                 </p>
             </div>
+            <!--Return To Home-->
+            <div class="text-center my-2">
+                <a href="{% url 'home' %}" class="btn rounded-1 def-btn mb-2">
+                    <i class="fa-solid fa-chevron-left me-2 "></i>Back to Home</a>
+            </div>
             <div class="card-wrapper">
             <!--Order Summary -->
-            <div class="card p-4 shadow-sm rounded-2">
+            <div class="card p-4 shadow-sm rounded-2 mb-4">
                 <!--Order Info-->
                 <p class="text-muted">Order Info :</p>
                 <div class="row">
@@ -121,11 +126,5 @@
             </div>
         </div>
     </div>
-    <!--Return To Home-->
-    <div class="text-center mt-3 mb-3">
-        <a href="{% url 'home' %}" class="btn rounded-1 def-btn mb-2">
-            <i class="fa-solid fa-chevron-left me-2 "></i>Back to Home</a>
-    </div>
-
 </main>
 {% endblock %}
