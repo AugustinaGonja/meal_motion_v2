@@ -18,7 +18,7 @@
             {% if product.image %}
             <img src="{{ product.image_url }}" class="img-fluid rounded" alt="{{ product.name }}">
             {% else %}
-            <img src="{{ MEDIA_URL }}no-image-icon-0.jpg" class="img-fluid rounded" alt="No Image Available">
+            <img src="{{ MEDIA_URL }}no-image-icon-0.jpg" class="img-fluid rounded" alt="{{ product.name }}">
             {% endif %}
         </div>
 

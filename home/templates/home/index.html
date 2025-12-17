@@ -22,14 +22,14 @@
                     lifestyle while juggling everyday responsibilities.
                 </p>
                 <!--Buttons-->
-                <a href="#" class="btn btn-lg rounded-1 text-uppercase mb-4 def-btn">Fitness &
+                <a href="{% url 'products' %}" class="btn btn-lg rounded-1 text-uppercase mb-4 def-btn">Fitness &
                     Nutrition Shop</a>
-                <a href="#" class="btn btn-lg rounded-1 text-uppercase mb-4 def-btn">Recipe
+                <a href="{% url 'recipes' %}" class="btn btn-lg rounded-1 text-uppercase mb-4 def-btn">Recipe
                     Catalogue</a>
             </div>
             <!--Hero Image-->
             <div class="col-md-6 text-center order-1 order-md-2 mb-2">
-                <img src="/media/Hero_image.jpg" alt="Hero Image" class="img-fluid hero-img">
+                <img src="{{ MEDIA_URL }}Hero_image.jpg" alt="Hero Image" class="img-fluid hero-img">
             </div>
         </div>
     </div>

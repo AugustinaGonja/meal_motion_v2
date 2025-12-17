@@ -21,15 +21,15 @@
                         <small>Asterisked fields* are mandatory.</small>
                     </p>
                     <fieldset class="mb-2">
-                        <legend class="fw-bold mb-3">Contact Information</legend>
+                        <legend class="fw-bold">Contact Information</legend>
                         {{ order_form.full_name | as_crispy_field }}
-                        <p class="text-muted text-end m-0"><small>We'll send your order information here.</small></p>
+                                                <p class="text-muted text-end m-0"><small>We'll send your order information here.</small></p>
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.contact_number | as_crispy_field }}
                     </fieldset>
                     <!--Delivery Info-->
                     <fieldset class="mb-2">
-                        <legend class="fw-bold mb-3">Delivery Address</legend>
+                        <legend class="fw-bold">Delivery Address</legend>
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.address_line_1 | as_crispy_field }}
                         {{ order_form.address_line_2 | as_crispy_field }}
@@ -77,10 +77,12 @@
                     <div class="row mb-3 border-bottom pb-3 m-0">
 
                         <!-- Product Image -->
-                        <div class="col-4 col-md-4">
-                            <img src="{{ item.product.image_url }}" class="img-fluid rounded"
-                                alt="{{ item.product.name }}">
-                        </div>
+                        {% if item.product.image %}
+                        <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+                        {% else %}
+                        <img src="{{MEDIA_URL}}no-image-icon-0.jpg" class="img-fluid rounded"
+                            alt="{{ item.product.name }}">
+                        {% endif %}
 
                         <!-- Product Info -->
                         <div class="col-8 col-md-8">
@@ -91,6 +93,11 @@
                         </div>
                     </div>
                     {% endfor %}
+
+                    <!--Edit Bag Button-->
+                    <a href="{% url 'bag' %}" class="btn rounded-1 def-btn w-100 mb-2">
+                        Edit Bag
+                    </a>
 
                     <div class="d-flex justify-content-between mb-2">
                         <span>Subtotal</span>

@@ -32,6 +32,8 @@ class OrderForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
 
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs.update({
+                'placeholder': placeholder,
+                'class': 'form-control mb-3'
+            })
             self.fields[field].label = False
-            
