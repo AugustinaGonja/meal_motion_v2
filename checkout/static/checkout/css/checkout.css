@@ -1,0 +1,16 @@
+/* Checkout Styles */
+
+#payment-form{
+    border-radius: 4px;
+    background-color: #e9e3dc;
+}
+
+#card-element{
+    background-color:#ffff;
+    border-radius: 4px;
+    border-color: grey;
+}
+
+#card-errors{
+    color: red;
+}
