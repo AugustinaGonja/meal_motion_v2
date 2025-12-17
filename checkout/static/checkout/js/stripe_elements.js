@@ -46,3 +46,57 @@ card.addEventListener('change', function(event) {
         errorDiv.textContent = '';
     }
 });
+
+// Handle form submission
+
+// Form Submission
+
+form.addEventListener('submit', async function (e) {
+    e.preventDefault(); 
+
+    const saveInfo = document.getElementById('id-save-info').checked; 
+    const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+
+    const postData = new FormData();
+    postData.append('csrfmiddlewaretoken', csrfToken);
+    postData.append('client_secret', clientSecret);
+    postData.append('save_info', saveInfo);
+
+    const url = '/checkout/cache_checkout_data/';
+
+    // Send POST request using fetch
+    fetch(url, {
+        method: 'POST',
+        body: postData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); 
+    })
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+    stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+            card: card,
+        },
+    }).then(function (result) {
+         // Handle Realtime Validation Errors
+
+      const errorDiv = document.getElementById('card-errors');
+
+      if (result.error) {
+          errorDiv.innerHTML = `<span class="small me-2">${result.error.message}</span>`;
+      } else {
+          if (result.paymentIntent.status === 'succeeded') {
+              form.submit();
+          }
+        }
+    });
+});
