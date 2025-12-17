@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="py-4 success-wrapper">
+    <div class="container success-box">
+        <div class="row gy-1">
+            <div class="text-center">
+                <i class="fa-solid fa-circle-check check-icon text-success "></i>
+                <h3 class="text-uppercase mt-2">Thank you for your purchase !</h3>
+                <p class="text-muted">Your order is being processed and you will recieve a confirmation message at <strong>{{order.email}}.</strong>
+                    <br>Your order number is <strong>{{ order.order_number }}</strong>
+                </p>
+            </div>
+            <div class="card-wrapper">
+            <!--Order Summary -->
+            <div>
+            </div>
+        </div>
+    </div>
+    <!--Return To Home-->
+    <div class="text-center mt-3 mb-3">
+        <a href="{% url 'home' %}" class="btn rounded-1 def-btn mb-2">
+            <i class="fa-solid fa-chevron-left me-2 "></i>Back to Home</a>
+    </div>
+
+</main>
+{% endblock %}
