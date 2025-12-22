@@ -1,21 +1,34 @@
-{% extends "account/base.html" %}
-
+{% extends "base.html" %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
+{% block content %}    
+<div class="container p-3 mt-5 mb-4 form-box shadow-sm" style="max-width: 450px;">
+    <div class="text-center mt-4">
+        <h2 class="text-uppercase">Create Account</h2>
+        <p class="text-muted small">Enter your details to sign up</p>
+    </div>
 
-{% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+    <form method="POST" action="{% url 'account_signup' %}">
+        {% csrf_token %}
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        <!-- Crispy form fields -->
+        <div class="mb-4">
+            {{ form|crispy }}
+        </div>
+        {{ redirect_field }}
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+        <!-- Submit -->
+        <button type="submit" class="btn w-100 rounded-1 fn-shop mt-3 mb-3">
+            {% trans "Sign Up" %}
+        </button>
 
+        <!-- Already have an account -->
+        <p class="text-muted mt-2 text-center">
+            {% blocktranslate %}
+            Already have an account? <a href="{{ login_url }}">Log in</a>
+            {% endblocktranslate %}
+        </p>
+    </form>
+</div>
 {% endblock content %}
