@@ -6,11 +6,13 @@ from django.conf import settings
 from django_countries.fields import CountryField
 
 from products.models import Product
+from profiles.models import UserProfile
 
 # Create your models here.
 
 class Order(models.Model):
     order_number = models.CharField(max_length=50, unique=True)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True , blank = True, related_name='orders')
     full_name = models.CharField(max_length=255, null=False, blank=False)
     email = models.EmailField(max_length=255, null=False, blank=False )
     contact_number = models.CharField(max_length=20, null=False, blank=False)
