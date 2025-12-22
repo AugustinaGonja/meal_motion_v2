@@ -85,9 +85,34 @@ form.addEventListener('submit', async function (e) {
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
+            billing_details: {
+                name: form.full_name?.value || "",
+                email: form.email?.value || "",
+                address : {
+                  line1 : form.address_line_1?.value || "",
+                  line2 : form.address_line_2?.value || "",
+                  city : form.town_or_city?.value || "",
+                  country : form.country?.value || "",
+                  postal_code : form.post_code?.value || "",
+                  state : form.county?.value || "",
+                }
+            }
         },
+        shipping: {
+            name: form.full_name?.value || "",
+            email: form.email?.value || "",
+            address : {
+              line1 : form.address_line_1?.value || "",
+              line2 : form.address_line_2?.value || "",
+              city : form.town_or_city?.value || "",
+              country : form.country?.value || "",
+              postal_code : form.post_code?.value || "",
+              state : form.county?.value || "",
+            }
+        }
     }).then(function (result) {
-         // Handle Realtime Validation Errors
+
+    // Handle Realtime Validation Errors
 
       const errorDiv = document.getElementById('card-errors');
 
