@@ -1,0 +1,7 @@
+
+.form-box .form-group,
+.form-box .mb-3,
+.form-box .mb-4,
+.form-box .form-control {
+    margin-bottom: 1.2rem !important;
+}
