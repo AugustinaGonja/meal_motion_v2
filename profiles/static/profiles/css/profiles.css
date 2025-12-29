@@ -1,3 +1,4 @@
+/* Profiles*/
 
 .form-box .form-group,
 .form-box .mb-3,
@@ -5,3 +6,8 @@
 .form-box .form-control {
     margin-bottom: 1.2rem !important;
 }
+
+.order-history{
+        max-height: 420px ;
+        overflow-y: auto;
+    }
