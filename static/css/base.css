@@ -148,7 +148,7 @@ p.subtitle {
 }
 
 /* Buttons */
-.def-btn{
+.def-btn, .selector-btn {
     background-color: #333533 !important;
     color: #ffffff;
     border: none;
@@ -157,6 +157,18 @@ p.subtitle {
     text-transform: uppercase;
     cursor: pointer;
 }
+
+.def-btn:hover, .selector-btn:hover {
+    background-color: #4e8098!important;
+    color: #ffffff;
+}
+
+/* Forms */
+.form-box {
+    border-radius: 4px;
+    background-color: #e9e3dc;
+}
+
 
 /* Footer */
 .custom-footer {
