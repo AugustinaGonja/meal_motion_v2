@@ -124,3 +124,14 @@ def edit_product(request, product_id):
     context = {'form': form, 'product': product}
 
     return render(request, template, context)
+
+def delete_product(request, product_id):
+    """Delete a product from the store."""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted.')
+
+    return redirect(reverse('products'))

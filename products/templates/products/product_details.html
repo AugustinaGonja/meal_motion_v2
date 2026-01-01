@@ -32,6 +32,15 @@
                 </strong>
             </div>
 
+            <!--Product Management-->
+            {% if request.user.is_superuser %}
+            <small class="mb-3">
+                <a href="{% url 'edit_product' product.id %}">Edit</a>
+                <a href="{% url 'delete_product' product.id %} " class="text-danger"
+                    onclick="return confirm('Are you sure you want to delete ?')">Delete</a>
+            </small>
+            {% endif %}
+
             <p class="mb-4 fs-6 text-muted">{{ product.description }}</p>
 
             <h3 class="fw-bold mb-4">£ {{ product.price }}</h3>
