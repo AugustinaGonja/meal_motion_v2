@@ -78,6 +78,10 @@ p.subtitle {
     z-index: 10000;
 }
 
+.bag {
+    color: #ec4e20;
+}
+
 /* Dropdown Menu */
 .dropdown-menu {
     background-color: #f9f3ec;
@@ -148,7 +152,7 @@ p.subtitle {
 }
 
 /* Buttons */
-.def-btn, .selector-btn {
+.def-btn {
     background-color: #333533 !important;
     color: #ffffff;
     border: none;
@@ -158,8 +162,8 @@ p.subtitle {
     cursor: pointer;
 }
 
-.def-btn:hover, .selector-btn:hover {
-    background-color: #4e8098!important;
+.def-btn:hover {
+    background-color: #4e8098 !important;
     color: #ffffff;
 }
 
