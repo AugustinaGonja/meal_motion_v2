@@ -7,7 +7,7 @@
         <div class="row align-items-center gy-5">
             <div class="col-md-6 text-center text-md-start order-2 order-md-1">
                 {% if user.is_authenticated %}
-                <h1 class="mb-4 text-center text-md-start">Welcome back . . . <br><strong></strong>
+                <h1 class="mb-4 text-center text-md-start">Welcome back . . . <br><strong>{{ user.username }}</strong>
                 </h1>
                 {% else %}
                 <h1 class="mb-4 text-center text-md-start">Welcome to . . . <br><strong>Mealmotion !</strong> </h1>

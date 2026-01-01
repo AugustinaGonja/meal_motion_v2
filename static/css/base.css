@@ -169,6 +169,10 @@ p.subtitle {
     background-color: #e9e3dc;
 }
 
+/* Toasts */
+.toast-container {
+    z-index: 1200;
+}
 
 /* Footer */
 .custom-footer {

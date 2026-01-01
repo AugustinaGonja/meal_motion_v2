@@ -11,7 +11,7 @@
                 <h3 class="text-uppercase mt-4">Product Management</h3>
                 <h5 class="text-uppercase text-muted mb-3">Add a Product</h5>
 
-                <div class="card shadow-sm p-4 border-0 rounded-2">
+                <div class="card shadow-sm p-4 border-0 form-box">
                     <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form|crispy }}

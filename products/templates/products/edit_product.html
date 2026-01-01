@@ -11,16 +11,16 @@
                 <h3 class="text-uppercase mt-4">Product Management</h3>
                 <h5 class="text-uppercase text-muted mb-3">Edit Product</h5>
 
-                <div class="card shadow-sm p-4 border-0 rounded-2">
+                <div class="card shadow-sm p-4 border-0 form-box">
                     <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form|crispy }}
 
                         <div class="d-flex justify-content-between mt-4">
-                            <a href="{% url 'products' %}" class="btn rounded-1 fn-shop text-uppercase">
+                            <a href="{% url 'products' %}" class="btn rounded-1 def-btn text-uppercase">
                                 Cancel
                             </a>
-                            <button type="submit" class="btn rounded-1 fn-shop text-uppercase"
+                            <button type="submit" class="btn rounded-1 def-btn text-uppercase"
                                 onclick="return confirm('Are you sure you want to make these changes?')">
                                 Update Product
                             </button>
