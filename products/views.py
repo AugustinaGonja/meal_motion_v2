@@ -1,3 +1,4 @@
+from urllib import request
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product
 
@@ -83,6 +84,18 @@ def product_details(request, product_id):
 def add_product(request):
     """Add a product to the store."""
 
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'Successfully added a product!')
+            return redirect(reverse('product_details', args=[product.id]))
+        else:
+            messages.error(request, 'Product not added. Please try again.')
+    
     form = ProductForm()
     template = 'products/add_product.html'
     context = {'form': form}

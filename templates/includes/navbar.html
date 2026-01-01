@@ -75,7 +75,7 @@
       {% if user.is_authenticated %}
       {% if user.is_superuser %}
       <div class="nav-icon">
-        <a href="#" class="text-reset">
+        <a href="{% url 'add_product' %}" class="text-reset">
           <i class="fa-solid fa-gears fa-xl mx-3"></i>
         </a>
         <a href="{% url 'profile' %}" class="text-reset">
