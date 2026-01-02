@@ -162,7 +162,9 @@ p.subtitle {
     cursor: pointer;
 }
 
-.def-btn:hover {
+.def-btn:hover , 
+.def-btn:focus, 
+.def-btn:active {
     background-color: #4e8098 !important;
     color: #ffffff;
 }

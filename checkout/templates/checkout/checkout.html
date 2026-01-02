@@ -23,7 +23,7 @@
                     <fieldset class="mb-2">
                         <legend class="fw-bold fs-6">Contact Information</legend>
                         {{ order_form.full_name | as_crispy_field }}
-                                                <p class="text-muted text-end m-0"><small>We'll send your order information here.</small></p>
+                        <p class="text-muted text-end m-0"><small>We'll send your order information here.</small></p>
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.contact_number | as_crispy_field }}
                     </fieldset>
@@ -77,26 +77,28 @@
                     <hr>
                     <!--Bag Items-->
                     {% if bag_items %}
-                    {% for item in bag_items %}
-                    <div class="row mb-3 border-bottom pb-3 m-0">
+                        {% for item in bag_items %}
+                        <div class="row mb-3 border-bottom pb-3 m-0">
 
-                        <!-- Product Image -->
-                        {% if item.product.image %}
-                        <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
-                        {% else %}
-                        <img src="{{MEDIA_URL}}no-image-icon-0.jpg" class="img-fluid rounded"
-                            alt="{{ item.product.name }}">
-                        {% endif %}
+                            <!-- Product Image -->
+                            <div class="col-4 col-md-4">
+                            {% if item.product.image %}
+                            <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+                            {% else %}
+                            <img src="{{MEDIA_URL}}no-image-icon-0.jpg" class="img-fluid rounded"
+                                alt="{{ item.product.name }}">
+                            {% endif %}
+                            </div>
 
-                        <!-- Product Info -->
-                        <div class="col-8 col-md-8">
-                            <h6 class="text-uppercase">{{ item.product.name }}</h6>
-                            <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
-                            <div class="d-flex align-items-center justify-content-between">
+                            <!-- Product Info -->
+                            <div class="col-8 col-md-8">
+                                <h6 class="text-uppercase">{{ item.product.name }}</h6>
+                                <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
+                                <div class="d-flex align-items-center justify-content-between">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     <!--Edit Bag Button-->
                     <a href="{% url 'bag' %}" class="btn rounded-1 def-btn w-100 mb-2">

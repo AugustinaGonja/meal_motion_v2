@@ -28,7 +28,12 @@
 
                     <!-- Product Image -->
                     <div class="col-3 col-md-2">
-                        <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+                        {% if item.product.image %}
+                            <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+                        {% else %}
+                            <img src="{{MEDIA_URL}}no-image-icon-0.jpg" class="img-fluid rounded"
+                            alt="{{ item.product.name }}">
+                        {% endif %}
                     </div>
 
                     <!-- Product Info -->
@@ -83,7 +88,7 @@
                 {% endif %}
             </div>
             <!--Order Summary-->
-            <div class="col-md-5">
+            <div class="col-md-5 mt-3">
                 <div>
                     <h3 class="text-uppercase text-center mb-3 fs-4">Order Summary</h3>
                     <hr>
