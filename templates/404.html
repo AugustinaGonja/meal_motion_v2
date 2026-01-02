@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5 form-box" style="max-width: 600px;">
+    <div class="text-center text-uppercase mt-4">
+        <h1 class="display-1 fw-bold text">404</h1>
+        <h2 class="fw-bold">Oops! Page not found</h2>
+    </div>
+    <div class="text-center">
+        <p>The page you are looking for does not exist.<br>
+            It might have been moved or deleted.</p>
+    </div>
+    <!--Return To Home-->
+    <div class="text-center my-4">
+        <a href="{% url 'home' %}" class="btn rounded-1 def-btn mb-2">
+            <i class="fa-solid fa-chevron-left me-2 "></i>Back to Home</a>
+    </div>
+</div>
+{% endblock %}
