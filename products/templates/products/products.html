@@ -82,7 +82,7 @@
                 {% if product.image %}
                 <img src="{{ product.image_url }}" class="product-image w-100" alt="{{ product.name }}">
                 {% else %}
-                <img src="{{ MEDIA_URL }}no-image-icon-0.jpg" class="product-image w-100" alt="{{ product.name }}">
+                <img src="{% static 'no-image-icon-0.jpg' %}" class="product-image w-100" alt="{{ product.name }}">
                 {% endif %}
                 <!--Product Info-->
                 <div class="d-flex justify-content-between align-items-center mt-3">
