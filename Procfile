@@ -1,1 +1,1 @@
-web: gunicorn meal_motion_v2.wsgi:application
+web: gunicorn meal_motion.wsgi:application
