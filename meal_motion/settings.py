@@ -59,8 +59,9 @@ INSTALLED_APPS = [
 
     # Other 
     'crispy_forms',
-    'crispy_bootstrap4'
-
+    'crispy_bootstrap4',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -181,6 +182,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Image Hosting
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Stripe 
 FREE_DELIVERY_THRESHOLD = Decimal('50')
