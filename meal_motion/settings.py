@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','meal-motion-v2.herokuapp.com','meal-motion-v2-5798e18769d4.herokuapp.com',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','meal-motion-v2-5798e18769d4.herokuapp.com',]
 
 
 # Application definition
