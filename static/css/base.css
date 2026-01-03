@@ -175,6 +175,10 @@ p.subtitle {
     background-color: #e9e3dc;
 }
 
+.form-box .form-control {
+    margin-bottom: 1.2rem !important;
+}
+
 /* Toasts */
 .toast-container {
     z-index: 1200;
