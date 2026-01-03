@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Archivo', sans-serif;
+    background-color: #f9f3ec;
+    color: #333533;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 120px; 
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 14px;
+}
+
+p.subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/* Navigation Bar */
+.custom-nav {
+    background-color: #f9f3ec !important;
+    height: 64px;
+    margin-top: 46.6px; 
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #333533 !important;
+}
+
+#nav-banner {
+    background-color: #333533;
+    color: #ffffff;
+    position: fixed;
+    top: 110.6px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+} 
+
+.nav-link {
+    color: #333533 !important;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav-item:hover .nav-link {
+    color: #ec4e20 !important;
+    background-color: transparent !important;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar-toggler{
+    z-index: 10000;
+}
+
+.bag {
+    color: #ec4e20;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #f9f3ec;
+    text-align: center;
+    border-color: #adabab;
+    border-radius: 4px;
+}
+
+.dropdown-item:hover {
+    background-color:#f9f3ec;
+    color:#ec4e20;
+    font-size: 18px;
+}
+
+.dropdown-heading {
+    font-weight: 300;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* Products & Recipes */
+.product-image , .recipe-image {
+    width: 100%;         
+    height: 350px;       
+    object-fit:cover;
+}
+
+.category-badge {
+    position: absolute;
+    background: #ec4e20;
+    color: white;
+    padding: 15px;
+    font: 12px 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px #333533;
+}
+
+.delivery-box {
+    background: #ffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.delivery-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.delivery-item i {
+    margin-right: 10px;
+    color: #79b4e2;
+}
+
+/* Search Bar */
+.search-bar-top {
+  background-color: #79b4e2 !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100; 
+}
+
+.search-bar-top form {
+  width: 50%;
+  margin: 0 auto;   
+}
+
+/* Buttons */
+.def-btn {
+    background-color: #333533 !important;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.def-btn:hover , 
+.def-btn:focus, 
+.def-btn:active {
+    background-color: #4e8098 !important;
+    color: #ffffff;
+}
+
+/* Forms */
+.form-box {
+    border-radius: 4px;
+    background-color: #e9e3dc;
+}
+
+.form-box .form-control {
+    margin-bottom: 1.2rem !important;
+}
+
+/* Toasts */
+.toast-container {
+    z-index: 1200;
+}
+
+/* Footer */
+.custom-footer {
+    background-color: #ec4e20 !important;
+    color: #ffffff !important;
+    font-family: 'Archivo', sans-serif;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .navbar .navbar-collapse { 
+        position: fixed;
+        top: 46.6px;
+        left: 0;
+        width: 100%;
+        background-color: #f9f3ec;
+        padding: 1rem;
+        z-index: 1050;
+        box-shadow: 0 4px 4px #333533;
+    }
+}
+
+@media (max-width: 768px) {  
+    .navbar-brand {
+    font-size: 28px;
+    }
+    .dropdown-nav-mobile {
+    border: none;
+    box-shadow: none;
+    }
+
+    .dropdown-item:hover {
+        color: #ec4e20;
+    }
+}

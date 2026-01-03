@@ -1,0 +1,39 @@
+/* Checkout Styles */
+
+#payment-form, .success-box{
+    border-radius: 4px;
+    background-color: #e9e3dc;
+}
+
+#card-element{
+    background-color:#ffff;
+    border-radius: 4px;
+    border-color: grey;
+}
+
+#card-errors{
+    color: #a31621;
+}
+
+/* Checkout Success */
+.success-wrapper{
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;           
+    min-height: 100vh;             
+    padding: 20px;                
+}
+.success-box, .card{
+   max-width: 800px;
+}
+
+.card-wrapper{
+    display: flex;                 
+    justify-content: center;       
+    align-items: center; 
+}
+
+.check-icon{
+    font-size: 4em;
+    margin-top: 15px;
+}
