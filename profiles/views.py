@@ -9,6 +9,7 @@ from checkout.models import Order
 
 # Create your views here.
 
+
 @login_required
 def profile(request):
     """Display and update user profile."""
@@ -25,7 +26,7 @@ def profile(request):
                 request,
                 'Profile not updated. Please ensure the form is valid.'
             )
-    
+
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
@@ -38,6 +39,7 @@ def profile(request):
 
     return render(request, template, context)
 
+
 def order_history(request, order_number):
     """Display a past order."""
     order = get_object_or_404(Order, order_number=order_number)
@@ -47,5 +49,5 @@ def order_history(request, order_number):
         'order': order,
         'from_profile': True,
         }
-    
+
     return render(request, template, context)
