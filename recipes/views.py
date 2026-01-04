@@ -4,6 +4,7 @@ from django.db.models.functions import Lower
 
 # Create your views here.
 
+
 def recipe_list(request):
 
     """
@@ -39,22 +40,21 @@ def recipe_list(request):
         recipes = recipes.filter(categories__name__in=categories_names)
         category_objects = Category.objects.filter(name__in=categories_names)
         total_recipes = recipes.count()
-        
+
     context = {
-        'recipes' : recipes,
+        'recipes': recipes,
         'current_categories': categories_names,
         'category_objects': category_objects,
         'current_sorting': sort,
-        'total_recipes':total_recipes,
+        'total_recipes': total_recipes,
     }
 
     return render(request, 'recipes/recipes.html', context)
 
 
 def recipe_details(request, recipe_id):
-    """ 
-    View to display a specific recipe's details. 
-    
+    """
+    View to display a specific recipe's details.
     """
 
     recipe = get_object_or_404(Recipe, pk=recipe_id)

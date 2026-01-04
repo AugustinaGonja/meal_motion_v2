@@ -3,8 +3,8 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def bag_contents(request):
-    
     bag_items = []
     total = Decimal('0.00')
     product_count = 0
@@ -22,7 +22,7 @@ def bag_contents(request):
             'product': product,
             'item_total': item_total,
         })
-        
+
     if bag_items:
         free_threshold = Decimal(str(settings.FREE_DELIVERY_THRESHOLD))
         if total < free_threshold:
@@ -48,3 +48,4 @@ def bag_contents(request):
     }
 
     return context
+    
