@@ -76,7 +76,7 @@ def checkout(request):
             bag_items = bag_contents(request)['bag_items']
 
             for item in bag_items:
-                product = Product.objects.get(id=item['item_id'])
+                product = get_object_or_404(Product, id=item['item_id'])
                 quantity = item['quantity']
 
                 OrderLineItem.objects.create(
