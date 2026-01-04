@@ -111,6 +111,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+X_FRAME_OPTIONS = "ALLOWALL"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
