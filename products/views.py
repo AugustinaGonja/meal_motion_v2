@@ -1,4 +1,3 @@
-from urllib import request
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product
 
@@ -12,6 +11,7 @@ from .models import Product, Category
 from .forms import ProductForm
 
 # Create your views here.
+
 
 def product_list(request):
 
@@ -59,7 +59,7 @@ def product_list(request):
         queries = Q(name__icontains=query) | Q(description__icontains=query)
         products = products.filter(queries)
         total_products = products.count()
-        
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -78,11 +78,11 @@ def product_details(request, product_id):
 
     """
     Display a specific product's details.
-    
     """
     product = get_object_or_404(Product, pk=product_id)
     context = {'product': product}
     return render(request, 'products/product_details.html', context)
+
 
 @login_required
 def add_product(request):
@@ -100,12 +100,13 @@ def add_product(request):
             return redirect(reverse('product_details', args=[product.id]))
         else:
             messages.error(request, 'Product not added. Please try again.')
-    
+
     form = ProductForm()
     template = 'products/add_product.html'
     context = {'form': form}
 
     return render(request, template, context)
+
 
 @login_required
 def edit_product(request, product_id):
@@ -132,6 +133,7 @@ def edit_product(request, product_id):
     context = {'form': form, 'product': product}
 
     return render(request, template, context)
+
 
 @login_required
 def delete_product(request, product_id):
