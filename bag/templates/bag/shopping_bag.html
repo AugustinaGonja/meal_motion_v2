@@ -15,9 +15,7 @@
         {% endif %}
         <div class="row gy-1">
             <div class=" col-md-7 text-start">
-                <h3 class="text-uppercase mt-2">Your Bag<small>
-                        {% if product_count %}({{ product_count }})</small>
-                </h3>
+                <h3 class="text-uppercase mt-2">Your Bag<small>{% if product_count %}({{ product_count }})</small></h3>
                 <p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
                 <p class="fw-bold fs-6">Product Info</p>{% endif %}
 
@@ -29,16 +27,16 @@
                     <!-- Product Image -->
                     <div class="col-3 col-md-2">
                         {% if item.product.image %}
-                            <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+                        <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
                         {% else %}
-                            <img src="{% static 'images/no-image-icon-0.jpg' %}" class="img-fluid rounded"
+                        <img src="{% static 'images/no-image-icon-0.jpg' %}" class="img-fluid rounded"
                             alt="{{ item.product.name }}">
                         {% endif %}
                     </div>
 
                     <!-- Product Info -->
                     <div class="col-8 col-md-8">
-                        <h6 class="text-uppercase">{{ item.product.name }}</h6>
+                        <p class="fs-6 fw-semibold text-uppercase">{{ item.product.name }}</p>
                         <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
                         <div class="d-flex align-items-center justify-content-between">
                             <!-- Quantity Selector -->
@@ -49,16 +47,16 @@
 
                                 <div class="input-group">
                                     <!--Decrease Qty Button-->
-                                    <button type="button" class="btn def-btn"
-                                        id="decrement-qty_{{ item.item_id }}" data-item-id="{{ item.item_id }}">
+                                    <button type="button" class="btn def-btn" id="decrement-qty_{{ item.item_id }}"
+                                        data-item-id="{{ item.item_id }}">
                                         <i class="fa-solid fa-minus fa-sm"></i>
                                     </button>
                                     <input type="number" id="id_qty_{{ item.item_id  }}" name="quantity"
                                         value="{{item.quantity}}" min="1" max="99" class="form-control text-center"
                                         data-item-id="{{ item.item_id }}">
                                     <!--Increase Qty Button-->
-                                    <button type="button" class="btn def-btn"
-                                        id="increment-qty_{{ item.item_id }}" data-item-id="{{ item.item_id  }}">
+                                    <button type="button" class="btn def-btn" id="increment-qty_{{ item.item_id }}"
+                                        data-item-id="{{ item.item_id  }}">
                                         <i class="fa-solid fa-plus fa-sm"></i>
                                     </button>
                                 </div>
@@ -102,8 +100,8 @@
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between mb-4">
-                        <h5><strong>Total</strong></h5>
-                        <h5><strong>£{{ grand_total|floatformat:2 }}</strong></h5>
+                        <p class="fs-5"><strong>Total</strong></p>
+                        <p class="fs-5"><strong>£{{ grand_total|floatformat:2 }}</strong></p>
                     </div>
                     <a href="{% url 'checkout' %}" class="btn btn-primary btn-lg w-100 rounded-1 def-btn">
                         Secure Checkout

@@ -92,7 +92,7 @@
 
                             <!-- Product Info -->
                             <div class="col-8 col-md-8">
-                                <h6 class="text-uppercase">{{ item.product.name }}</h6>
+                                <p class="fs-6 fw-semibold text-uppercase">{{ item.product.name }}</p>
                                 <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
                                 <div class="d-flex align-items-center justify-content-between">
                                 </div>
@@ -115,8 +115,8 @@
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between mb-4">
-                        <h5><strong>Total</strong></h5>
-                        <h5><strong>£{{ grand_total|floatformat:2 }}</strong></h5>
+                        <p class="fs-5"><strong>Total</strong></p>
+                        <p class="fs-5"><strong>£{{ grand_total|floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>

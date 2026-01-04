@@ -38,15 +38,15 @@
                 <strong>{{ recipe.rating }}/5</strong>
             </div>
             <!-- Nutritional Info -->
-            <span>
+            <div>
                 <p><strong>Calories: </strong>{{ recipe.nutritional_value.calories}} Kcal | <strong>Protein:</strong> {{ recipe.nutritional_value.protein }} g |<strong>Carbohydrates:</strong>
                     {{ recipe.nutritional_value.carbohydrates }} | <strong>Fat:</strong> {{ recipe.nutritional_value.fat }} g</p>
-            </span>
+            </div>
             <!-- Serving Size -->
             <p class="mb-3"><strong>Serving Size:</strong> {{ recipe.serving_size }}</p>
             <hr>
             <!-- Ingredients -->
-            <h5 class=" fw-bold mt-2">Ingredients</h5>
+            <p class="fs-5 fw-semibold mt-2">Ingredients</p>
             <hr>
             <ul>
                 {% for ingredient in recipe.ingredients %}
@@ -56,7 +56,7 @@
             <hr>
 
             <!-- Instructions -->
-            <h5 class="fw-bold mt-2">Method</h5>
+            <p class="fs-5 fw-semibold mt-2">Method</p>
             <hr>
             <ul>
                 {% for step in recipe.instructions.splitlines %}
