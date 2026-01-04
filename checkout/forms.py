@@ -1,40 +1,48 @@
 from django import forms
-from .models import UserProfile
+from .models import Order
 
-# Django Form Customization
+# Django Form Customisation
 
 
-class UserProfileForm(forms.ModelForm):
+class OrderForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        exclude = ('user',)
+        model = Order
+        fields = (
+            'full_name',
+            'email',
+            'contact_number',
+            'town_or_city',
+            'address_line_1',
+            'address_line_2',
+            'post_code',
+            'county',
+            'country',
+            )
 
     def __init__(self, *args, **kwargs):
-        """Remove labels and replace them with placeholders."""
+        """Remove and replace labels with Placeholders """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'default_contact_number': 'Contact Number',
-            'default_town_or_city': 'Town or City',
-            'default_address_line_1': 'Address Line 1',
-            'default_address_line_2': 'Address Line 2',
-            'default_post_code': 'Post Code',
-            'default_county': 'County',
-            'default_country': 'Country',
+            'full_name': 'Full Name',
+            'email': 'Email',
+            'contact_number': 'Contact Number',
+            'town_or_city': 'Town or City',
+            'address_line_1': 'Address Line 1',
+            'address_line_2': 'Address Line 2',
+            'post_code': 'Postcode',
+            'county': 'County',
+            'country': 'Country',
         }
 
         for field_name, field in self.fields.items():
-            existing_classes = field.widget.attrs.get("class", "")
-            field.widget.attrs["class"] = (
-                f"{existing_classes} form-control mb-3".strip()
-            )
+            existing_classes = field.widget.attrs.get('class', '')
+            field.widget.attrs['class'] = f'{existing_classes} form-control mb-3'.strip()
 
-            label = placeholders[field_name]
-            suffix = " *" if field.required else ""
-            text = f"{label}{suffix}"
+            if isinstance(field, forms.ChoiceField):
+                empty_label = f"{placeholders[field_name]} *" if field.required else placeholders[field_name]
+                field.choices = [('', empty_label)] + list(field.choices)
+            else:
+                placeholder = f"{placeholders[field_name]} *" if field.required else placeholders[field_name]
+                field.widget.attrs['placeholder'] = placeholder
 
-        if isinstance(field, forms.ChoiceField):
-            field.choices = [("", text), *field.choices]
-        else:
-            field.widget.attrs["placeholder"] = text
-
-        field.label = False
+            field.label = False
