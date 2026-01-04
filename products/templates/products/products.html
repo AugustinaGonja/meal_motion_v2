@@ -23,18 +23,18 @@
 
     <!--Sort and Filter Buttons-->
     <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
-        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown"
+        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown-3"
             data-bs-toggle="dropdown" aria-expanded="false">
             Filter By Category
         </button>
-        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown-3">
             <li><a class="dropdown-item" href="{% url 'products' %}?category=supplement">Supplement</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=hydration">Hydration</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_equipment">Fitness Equipment</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_tools">Kitchen Tools</a></li>
         </ul>
 
-        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown"
+        <button class="btn rounded-1 dropdown-toggle text-uppercase def-btn" type="button" id="sortDropdown-4" data-bs-toggle="dropdown"
             aria-expanded="false">
             {% if not request.GET.sort %}
             Sort By . . .
@@ -52,7 +52,7 @@
             {% endif %}
         </button>
 
-        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown-4">
             <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">Category (A-Z)</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=desc">Category (Z-A)</a>
             </li>
@@ -86,7 +86,7 @@
                 {% endif %}
                 <!--Product Info-->
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                    <h5 class="fs-5 mb-0">{{ product.name }}</h5>
+                    <p class="fs-5 fw-semibold mb-0">{{ product.name }}</p>
                     <div class="d-flex align-items-center">
                         <small>
                             <strong>

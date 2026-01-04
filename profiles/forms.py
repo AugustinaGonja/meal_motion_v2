@@ -21,11 +21,15 @@ class UserProfileForm(forms.ModelForm):
             'default_country': 'Country',
         }
 
-        for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
+        for field_name, field in self.fields.items():
+            existing_classes = field.widget.attrs.get('class', '')
+            field.widget.attrs['class'] = f'{existing_classes} form-control mb-3'.strip()
 
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].label = False
+            if isinstance(field, forms.ChoiceField):
+                empty_label = f"{placeholders[field_name]} *" if field.required else placeholders[field_name]
+                field.choices = [('', empty_label)] + list(field.choices)
+            else:
+                placeholder = f"{placeholders[field_name]} *" if field.required else placeholders[field_name]
+                field.widget.attrs['placeholder'] = placeholder
+                
+            field.label = False

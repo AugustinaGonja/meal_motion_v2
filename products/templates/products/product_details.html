@@ -43,7 +43,7 @@
 
             <p class="mb-4 fs-6 text-muted">{{ product.description }}</p>
 
-            <h3 class="fw-bold mb-4">£ {{ product.price }}</h3>
+            <p class="fs-4 fw-bold mb-4">£ {{ product.price }}</p>
 
             <!-- QTY Selector -->
             <form method="POST" action="{% url 'add_items' product.id %}">
