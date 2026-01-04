@@ -3,122 +3,119 @@
 
 {% block content %}
 <main class="py-4 flex-grow-1">
-    <div class="container">
-        <!--Return to Products-->
-        {% if bag_items %}
-        <div class="mb-4">
-            <a href="{% url 'products' %}" class="btn rounded-1 def-btn">
-                <i class="fa-solid fa-chevron-left me-2"></i>
-                Continue Shopping
+  <div class="container">
+
+    {% if bag_items %}
+      <!--Return to Products-->
+      <div class="mb-4">
+        <a href="{% url 'products' %}" class="btn rounded-1 def-btn">
+          <i class="fa-solid fa-chevron-left me-2"></i>Continue Shopping
+        </a>
+      </div>
+
+      <div class="row gy-1">
+        <!-- Bag Items Column -->
+        <div class="col-md-7 text-start">
+          <h3 class="text-uppercase mt-2">
+            Your Bag
+            {% if product_count %}
+              <small>({{ product_count }})</small>
+            {% endif %}
+          </h3>
+          <p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
+          <p class="fw-bold fs-6">Product Info</p>
+
+          {% for item in bag_items %}
+          <div class="row mb-3 border-bottom pb-3 m-0">
+            <!-- Product Image -->
+            <div class="col-3 col-md-2">
+              {% if item.product.image %}
+                <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
+              {% else %}
+                <img src="{% static 'images/no-image-icon-0.jpg' %}" class="img-fluid rounded" alt="{{ item.product.name }}">
+              {% endif %}
+            </div>
+
+            <!-- Product Info -->
+            <div class="col-8 col-md-8">
+              <p class="fs-6 fw-semibold text-uppercase">{{ item.product.name }}</p>
+              <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
+              <div class="d-flex align-items-center justify-content-between">
+                <form action="{% url 'update_bag' item.item_id %}" method="POST" class="d-flex align-items-center text-center mt-2 update-qty">
+                  {% csrf_token %}
+                  <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                  <div class="input-group">
+                    <button type="button" class="btn def-btn" id="decrement-qty_{{ item.item_id }}" data-item-id="{{ item.item_id }}">
+                      <i class="fa-solid fa-minus fa-sm"></i>
+                    </button>
+                    <input type="number" id="id_qty_{{ item.item_id }}" name="quantity" value="{{ item.quantity }}" min="1" max="99" class="form-control text-center" data-item-id="{{ item.item_id }}">
+                    <button type="button" class="btn def-btn" id="increment-qty_{{ item.item_id }}" data-item-id="{{ item.item_id }}">
+                      <i class="fa-solid fa-plus fa-sm"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Remove Item -->
+            <div class="col-1 col-md-2 remove-item">
+              <form action="{% url 'remove_item' item.item_id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" style="border: none; background:none;">
+                  <i class="fa-solid fa-trash-can" style="color: #a31621;"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          {% endfor %}
+
+          {% if free_delivery_delta > 0 %}
+            <p class="text-danger">
+              Spend £{{ free_delivery_delta|floatformat:2 }} more to get free delivery.
+            </p>
+          {% else %}
+            <p class="text-success">
+              You've unlocked FREE delivery!
+            </p>
+          {% endif %}
+        </div>
+
+        <!-- Order Summary Column -->
+        <div class="col-md-5 mt-3">
+          <div>
+            <h3 class="text-uppercase text-center mb-3 fs-4">Order Summary</h3>
+            <hr>
+            <div class="d-flex justify-content-between mb-2">
+              <span>Subtotal</span>
+              <span><strong>£{{ total|floatformat:2 }}</strong></span>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <span>Delivery</span>
+              <span><strong>£{{ delivery|floatformat:2 }}</strong></span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-4">
+              <p class="fs-5"><strong>Total</strong></p>
+              <p class="fs-5"><strong>£{{ grand_total|floatformat:2 }}</strong></p>
+            </div>
+            <a href="{% url 'checkout' %}" class="btn btn-primary btn-lg w-100 rounded-1 def-btn">
+              Secure Checkout
+              <i class="fa-solid fa-chevron-right fa-sm ms-2"></i>
             </a>
+          </div>
         </div>
-        {% endif %}
-        <div class="row gy-1">
-            <div class=" col-md-7 text-start">
-                <h3 class="text-uppercase mt-2">Your Bag{% if product_count %}<small>({{ product_count }})</small></h3>
-                <p>Order Total | <strong>£{{ total|floatformat:2 }}</strong></p>
-                <p class="fw-bold fs-6">Product Info</p>{% endif %}
+      </div> 
 
-                <!--Bag Items-->
-                {% if bag_items %}
-                {% for item in bag_items %}
-                <div class="row mb-3 border-bottom pb-3 m-0">
-
-                    <!-- Product Image -->
-                    <div class="col-3 col-md-2">
-                        {% if item.product.image %}
-                        <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
-                        {% else %}
-                        <img src="{% static 'images/no-image-icon-0.jpg' %}" class="img-fluid rounded"
-                            alt="{{ item.product.name }}">
-                        {% endif %}
-                    </div>
-
-                    <!-- Product Info -->
-                    <div class="col-8 col-md-8">
-                        <p class="fs-6 fw-semibold text-uppercase">{{ item.product.name }}</p>
-                        <span class="fw-bold">£{{ item.item_total|floatformat:2 }}</span>
-                        <div class="d-flex align-items-center justify-content-between">
-                            <!-- Quantity Selector -->
-                            <form action="{% url 'update_bag' item.item_id %}" method="POST"
-                                class="d-flex align-items-center text-center mt-2 update-qty">
-                                {% csrf_token %}
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
-                                <div class="input-group">
-                                    <!--Decrease Qty Button-->
-                                    <button type="button" class="btn def-btn" id="decrement-qty_{{ item.item_id }}"
-                                        data-item-id="{{ item.item_id }}">
-                                        <i class="fa-solid fa-minus fa-sm"></i>
-                                    </button>
-                                    <input type="number" id="id_qty_{{ item.item_id  }}" name="quantity"
-                                        value="{{item.quantity}}" min="1" max="99" class="form-control text-center"
-                                        data-item-id="{{ item.item_id }}">
-                                    <!--Increase Qty Button-->
-                                    <button type="button" class="btn def-btn" id="increment-qty_{{ item.item_id }}"
-                                        data-item-id="{{ item.item_id  }}">
-                                        <i class="fa-solid fa-plus fa-sm"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!--Remove Item-->
-                    <div class="col-1 col-md-2 remove-item">
-                        <form action="{% url 'remove_item' item.item_id %}" method="POST">
-                            {% csrf_token %}
-                            <button type="submit" style="border: none; background:none ;">
-                                <i class="fa-solid fa-trash-can" style="color: #a31621;"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                {% endfor %}
-                {% if free_delivery_delta > 0 %}
-                <p class="text-danger">
-                    Spend £{{ free_delivery_delta|floatformat:2 }} more to get free delivery.
-                </p>
-                {% else %}
-                <p class="text-success">
-                    You've unlocked FREE delivery!
-                </p>
-                {% endif %}
-            </div>
-            <!--Order Summary-->
-            <div class="col-md-5 mt-3">
-                <div>
-                    <h3 class="text-uppercase text-center mb-3 fs-4">Order Summary</h3>
-                    <hr>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Subtotal</span>
-                        <span><strong>£{{ total|floatformat:2 }}</strong></span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-3">
-                        <span>Delivery</span>
-                        <span><strong>£{{ delivery|floatformat:2 }}</strong></span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between mb-4">
-                        <p class="fs-5"><strong>Total</strong></p>
-                        <p class="fs-5"><strong>£{{ grand_total|floatformat:2 }}</strong></p>
-                    </div>
-                    <a href="{% url 'checkout' %}" class="btn btn-primary btn-lg w-100 rounded-1 def-btn">
-                        Secure Checkout
-                        <i class="fa-solid fa-chevron-right fa-sm ms-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
     {% else %}
-    <p class="mt-3">Your bag is empty.</p>
-    <a href="{% url 'products' %}" class="btn rounded-1 text-uppercase mb-4 def-btn">
-        <i class="fa-solid fa-chevron-left fa-xs me-2"></i>
-        Browse Shop
-    </a>
+      <p class="mt-3 text-uppercase">Your bag is empty.</p>
+      <a href="{% url 'products' %}" class="btn rounded-1 text-uppercase mb-4 def-btn">
+        <i class="fa-solid fa-chevron-left fa-xs me-2"></i>Browse Shop
+      </a>
     {% endif %}
+
+  </div>
 </main>
+
 {% endblock %}
 
 {% block extra_js %}
