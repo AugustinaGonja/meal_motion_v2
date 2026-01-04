@@ -43,8 +43,8 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 * [Recipe Details](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Frecipes%2F1%2F) - No errors or warnings.
 * [Profile](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fprofile%2F) - No errors or warnings.
 * [Shopping Bag](IDKKK) - No errors or warnings.
-* [Checkout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fcheckout%2F) - No errors or warnings.
-* [Checkout Success](done) - No errors or warnings.
+* [Checkout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fproducts%2F) - No errors or warnings.
+* [Checkout Success](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fcheckout%2Fcheckout_success%2F98E4F0548471420B93240F8C13A2EFF4%2F) - No errors or warnings.
 * [Registration](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Fsignup%2F) - There is an error which is derived from the use of crispy forms - not my actual code.
 [Attribute Error](static/images/testing_images/attribute-error.png)
 * [Login](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Flogin%2F) - No errors or warnings.
@@ -115,8 +115,8 @@ I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop 
 * [Product Details](static/images/testing_images/prodet-PT.png) 
 * [Profile](static/images/testing_images/profile-PT.png) 
 * [Shopping Bag](static/images/testing_images/bag-PT.png) 
-* [Checkout]() 
-* [Checkout Success]()
+* [Checkout](static/images/testing_images/checkout-PT.png) 
+* [Checkout Success](static/images/testing_images/success-PT.png)
 * [Registration](static/images/testing_images/signup-PT.png) 
 * [Login](static/images/testing_images/signin-PT.png) 
 * [Logout](static/images/testing_images/logout-PT.png) 

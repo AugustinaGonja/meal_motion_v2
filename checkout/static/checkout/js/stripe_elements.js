@@ -50,6 +50,8 @@ card.addEventListener('change', function(event) {
 // Handle form submission
 
 // Form Submission
+const form = document.getElementById('payment-form');
+const clientSecret = client_secret;
 
 form.addEventListener('submit', async function (e) {
     e.preventDefault(); 
