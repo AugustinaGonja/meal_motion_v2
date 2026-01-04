@@ -34,28 +34,26 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 
 **HTML Validator**
 * [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2F) - No errors or warnings.
-* [Index Page](done) - No errors or warnings.
-* [Add & Edit Products](done & done ) - No errors or warnings.
-* [Products](sorted need to deploy) - No errors or warnings.
-* [Product Details](sorted) - No errors or warnings.
-* [Recipes](sorted need to deploy) - No errors or warnings.
-* [Recipe Details](sorted) - No errors or warnings.
-* [Profile](done) - No errors or warnings.
-* [Shopping Bag](sorted) - No errors or warnings.
-* [Checkout](done) - No errors or warnings.
+* [Index Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2F) - No errors or warnings.
+* [Add Products](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fproducts%2Fadd%2F) - No errors or warnings
+* [Edit Products](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fproducts%2Fedit%2F1%2F) - No errors or warnings
+* [Products](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fproducts%2F) - No errors or warnings.
+* [Product Details](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fproducts%2F1%2F) - No errors or warnings.
+* [Recipes](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Frecipes%2F) - No errors or warnings.
+* [Recipe Details](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Frecipes%2F1%2F) - No errors or warnings.
+* [Profile](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fprofile%2F) - No errors or warnings.
+* [Shopping Bag](IDKKK) - No errors or warnings.
+* [Checkout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fcheckout%2F) - No errors or warnings.
 * [Checkout Success](done) - No errors or warnings.
-* [Registration](hm) - No errors or warnings.
-* [Login](done) - No errors or warnings.
-* [Logout](done) - No errors or warnings.
-* [404 Error Page]() - There are no other errors; the validator simply identified the 404 page.
-* [500 Error Page]() - No errors or warnings.<br>
-
+* [Registration](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Fsignup%2F) - There is an error which is derived from the use of crispy forms - not my actual code.
+[Attribute Error](static/images/testing_images/attribute-error.png)
+* [Login](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Flogin%2F) - No errors or warnings.
+* [Logout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Flogout%2F) - No errors or warnings.
+* [Error Pages](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fj) - There are no other errors; the validator simply identified the 404 page.
 
 **CSS Validator**<br>
-I just submitted the css directly through the WC3 CSS Validator.
-* [base.css Validator](https://jigsaw.w3.org/css-validator/validator) - No Error Found.
-* [checkout.css Validator](https://jigsaw.w3.org/css-validator/validator) - No Error Found
-* [Internal CSS in the profile.html](https://jigsaw.w3.org/css-validator/validator) - No Error Found
+I just submitted the using the url through the WC3 CSS Validator.
+* [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#warnings) - No Error Found.
 
 ### Python Validator
 To validate all my Python code, I used the Code Institute [Python Linter](https://pep8ci.herokuapp.com/).<br>
@@ -63,34 +61,35 @@ All was clear with no errors found. Below, I’ve provided Python validations fo
 
 **"products" App :**
 
-* [admin.py](static/media/TESTING/admin-products-PL.png)
-* [forms.py](static/media/TESTING/forms-products-PL.png)
-* [models.py](static/media/TESTING/models-products-PL.png)
-* [urls.py](static/media/TESTING/urls-products-PL.png)
-* [views.py](static/media/TESTING/views-products-PL.png) 
+* [admin.py](static/images/testing_images/admin-products-PL.png)
+* [forms.py](static/images/testing_images/forms-products-PL.png)
+* [models.py](static/images/testing_images/models-products-PL.png)
+* [urls.py](static/images/testing_images/urls-products-PL.png)
+* [views.py](static/images/testing_images/views-products-PL.png) 
 
 **"bag" App :**
 
-* [context.py](static/media/TESTING/context-bag-PL.png)
-* [views.py](static/media/TESTING/views-bag-PL.png)
+* [context.py](static/images/testing_images/context-bag-PL.png)
+* [urls.py](static/images/testing_images/urls-bag-PL.png)
+* [views.py](static/images/testing_images/views-bag-PL.png)
 
 **"checkout" App :**
 
-* [admin.py](static/media/TESTING/admin-check-PL.png)
-* [forms.py](static/media/TESTING/forms-check-PL.png)
-* [models.py](static/media/TESTING/models-check-PL.png)
-* [signals.py](static/media/TESTING/signals-check-PL.png)
-* [urls.py](static/media/TESTING/urls-check-PL.png)
-* [views.py](static/media/TESTING/views-check-PL.png)
-* [webhook_handler.py](static/media/TESTING/webhand-check-PL.png)
-* [webhooks.py](static/media/TESTING/webhook-check-PL.png)
+* [admin.py](static/images/testing_images/admin-check-PL.png)
+* [forms.py](static/images/testing_images/forms-check-PL.png)
+* [models.py](static/images/testing_images/models-check-PL.png)
+* [signals.py](static/images/testing_images/signals-check-PL.png)
+* [urls.py](static/images/testing_images/urls-check-PL.png)
+* [views.py](static/images/testing_images/views-check-PL.png)
+* [webhook_handler.py](static/images/testing_images/webhand-check-PL.png)
+* [webhooks.py](static/images/testing_images/webhook-check-PL.png)
 
 **"profiles" App :**
 
-* [forms.py](static/media/TESTING/forms-profile-PL.png)
-* [models.py](static/media/TESTING/models-profile-PL.png)
-* [urls.py](static/media/TESTING/urls-profile-PL.png)
-* [views.py](static/media/TESTING/views-profile-PL.png)
+* [forms.py](static/images/testing_images/forms-profile-PL.png)
+* [models.py](static/images/testing_images/models-profile-PL.png)
+* [urls.py](static/images/testing_images/urls-profile-PL.png)
+* [views.py](static/images/testing_images/views-profile-PL.png)
 
 ### Django Testing
 xxx
@@ -106,20 +105,21 @@ I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop 
 <br>The results are as shown below.
 
 ### Desktop
-* [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstrength-stack-e65fe8f9116b.herokuapp.com%2F) - No errors or warnings.
-* [Index Page]() - No errors or warnings.
-* [Add & Edit Products]() - No errors or warnings.
-* [Recipes]() - No errors or warnings.
-* [Recipe Details]() - No errors or warnings.
-* [Profile]() - No errors or warnings.
-* [Shopping Bag]() - No errors or warnings.
-* [Checkout]() - No errors or warnings.
-* [Checkout Success]() - No errors or warnings.
-* [Registration]() - No errors or warnings.
-* [Login]() - No errors or warnings.
-* [Logout]() - No errors or warnings.
-* [404 Error Page]() - There are no other errors; the validator simply identified the 404 page.
-* [500 Error Page]() - No errors or warnings.<br>
+* [Home Page](static/images/testing_images/home-PT.png) 
+* [Index Page](static/images/testing_images/index-PT.png) 
+* [Add Products](static/images/testing_images/addprod-PT.png) 
+* [Edit Products](static/images/testing_images/editprod-PT.png) 
+* [Recipes](static/images/testing_images/recipes-PT.png) 
+* [Recipe Details](static/images/testing_images/recipdet-PT.png) 
+* [Products](static/images/testing_images/products-PT.png) 
+* [Product Details](static/images/testing_images/prodet-PT.png) 
+* [Profile](static/images/testing_images/profile-PT.png) 
+* [Shopping Bag](static/images/testing_images/bag-PT.png) 
+* [Checkout]() 
+* [Checkout Success]()
+* [Registration](static/images/testing_images/signup-PT.png) 
+* [Login](static/images/testing_images/signin-PT.png) 
+* [Logout](static/images/testing_images/logout-PT.png) 
 
 **To summarise :**  
 Performance scores for the Index, Home, and 404 pages were some of the lowest at 73, the lowest being the 500 page at 71, which is below the desired level but passable.
