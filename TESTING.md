@@ -42,14 +42,13 @@ The W3C Validator was used to check and validate the HTML and CSS for all pages 
 * [Recipes](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Frecipes%2F) - No errors or warnings.
 * [Recipe Details](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Frecipes%2F1%2F) - No errors or warnings.
 * [Profile](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fprofile%2F) - No errors or warnings.
-* [Shopping Bag](IDKKK) - No errors or warnings.
-* [Checkout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fproducts%2F) - No errors or warnings.
+* [Shopping Bag](https://validator.w3.org/nu/?level=warning&doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fshopping_bag%2F) - No errors or warnings.
+* [Checkout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fproducts%2F) - No errors or warnings.<br>Error regarding was regarding the Country Field in my form - I could not have "placeholder" as an attribute of the select element so I removed it and amended my fomrs.py accordingly.<br>[Attribute Error](static/images/testing_images/attribute-error.png).
 * [Checkout Success](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fcheckout%2Fcheckout_success%2F98E4F0548471420B93240F8C13A2EFF4%2F) - No errors or warnings.
-* [Registration](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Fsignup%2F) - There is an error which is derived from the use of crispy forms - not my actual code.
-[Attribute Error](static/images/testing_images/attribute-error.png)
+* [Registration](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Fsignup%2F) - There is an error which is derived from the use of crispy forms - not my actual code.<br>[Crispy Error](static/images/testing_images/crispy-error.png)
 * [Login](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Flogin%2F) - No errors or warnings.
 * [Logout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Faccounts%2Flogout%2F) - No errors or warnings.
-* [Error Pages](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fj) - There are no other errors; the validator simply identified the 404 page.
+* [Error Pages](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeal-motion-v2-5798e18769d4.herokuapp.com%2Fj) - There are no other errors; the validator simply identified the error page.
 
 **CSS Validator**<br>
 I just submitted the using the url through the WC3 CSS Validator.
@@ -91,7 +90,8 @@ All was clear with no errors found. Below, I’ve provided Python validations fo
 * [urls.py](static/images/testing_images/urls-profile-PL.png)
 * [views.py](static/images/testing_images/views-profile-PL.png)
 
-### Django Testing
+### Webhook Testing 
+
 xxx
 # Performance Testing ( Wave & Lighthouse )
 **Wave Contrast Checker**
@@ -101,7 +101,7 @@ All pages pass the color contrast checker, ensuring accessibility and readabilit
 I made sure text and background colors work together.
 
 ## Performance Results 
-I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop - page by page.
+I used Lighthouse on ChromeDevTools to test performance of my website on desktop - page by page.
 <br>The results are as shown below.
 
 ### Desktop
@@ -120,17 +120,16 @@ I used Lighthouse on ChromeDevTools to test perfomance of my website on desktop 
 * [Registration](static/images/testing_images/signup-PT.png) 
 * [Login](static/images/testing_images/signin-PT.png) 
 * [Logout](static/images/testing_images/logout-PT.png) 
+* [404](static/images/testing_images/404-PT.png) 
 
 **To summarise :**  
-Performance scores for the Index, Home, and 404 pages were some of the lowest at 73, the lowest being the 500 page at 71, which is below the desired level but passable.
-I suspect that Chrome extensions may have impacted these results. 
+Overall performance scores for the site ranged between 88-99 with the Recipes page at the lowest. The rest of the performance scores were above 94.
+I suspect that Chrome extensions may have impacted some of these results. 
 Aside from that, most performance metrics were in the green.
 
 SEO only dropped into the orange range on the 404 page.
 
-Accessibility scores ranged from approximately 85 to the 90s.
-
-Best Practices consistently scored 100, with only a few instances ranging between 90-100.
+Accessibility scores ranged from approximately 75- 90 as with best practices.
 
 ## Manual Testing
 ### Testing User Stories
