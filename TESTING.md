@@ -8,7 +8,7 @@
 **[Automated Testing](#automated-testing)**
 * [W3C Validator](#wc3-html--css-validator)
 * [Python Validator](#python-validator)
-* [Django Testing](#django-testing)
+* [Webhook Testing](#webhook-testing)
 
 
 **[Performance Testing ( Wave & Lighthouse )](#performance-testing-lighthouse)**
@@ -91,8 +91,14 @@ All was clear with no errors found. Below, I’ve provided Python validations fo
 * [views.py](static/images/testing_images/views-profile-PL.png)
 
 ### Webhook Testing 
+I implemented Stripe webhook handlers to programmatically verify successful, failed, and unhandled PaymentIntent lifecycle events, ensuring reliable payment processing.<br>
+[Payment Intent Succeeded](static/images/testing_images/webhooks-1.png)<br>
+[Payment Intent Failed](static/images/testing_images/webhooks-2.png)
 
-xxx
+### General Testing
+Throughout the code, I used print statements validate that the application logic behaved as expected, as well as to identify failure points. This approach was particularly useful when developing complex views.
+I removed these once they were not needed.
+
 # Performance Testing ( Wave & Lighthouse )
 **Wave Contrast Checker**
 
@@ -339,7 +345,6 @@ I tested the website across the following devices and browsers, and it displayed
 
 | No | Bug | Issue |
 | :--- | :--- | :--- |
-| 1| On mobile screen sizes , qty selector stacks vertically | [Bug-1](static/media/TESTING/bugs/bug-4.png)|
-| 2 | The "Remember me" on the Login and Registration page box does not save account details.| X |
+| 1 | The "Remember me" on the Login and Registration page box does not save account details.| X |
 ---
 [Back to the Top](#mealmotion---testing)
